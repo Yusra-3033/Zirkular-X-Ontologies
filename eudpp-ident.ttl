@@ -1,0 +1,333 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eudpp: <https://purl.org/eudpp#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann1: <http://purl.org/vocab/vann#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:contributor a owl:AnnotationProperty .
+
+dcterms:created a owl:AnnotationProperty .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:identifier a owl:AnnotationProperty .
+
+dcterms:issued a owl:AnnotationProperty .
+
+dcterms:licence a owl:AnnotationProperty .
+
+dcterms:references a owl:AnnotationProperty .
+
+dcterms:source a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+vann1:preferredNamespacePrefix a owl:AnnotationProperty .
+
+skos:altLabel a owl:AnnotationProperty .
+
+skos:definition a owl:AnnotationProperty .
+
+eudpp:ActorIdentifier a owl:Class ;
+    rdfs:label "Actor identifier"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty eudpp:hasScheme ;
+            owl:someValuesFrom eudpp:ActorIdentifierScheme ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty eudpp:identifierValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        eudpp:Identifier ;
+    owl:disjointWith eudpp:DPPIdentifier,
+        eudpp:FacilityIdentifier,
+        eudpp:MaterialIdentifier,
+        eudpp:ProductIdentifier,
+        eudpp:SoCIdentifier .
+
+eudpp:CAS a owl:NamedIndividual,
+        eudpp:MaterialIdentifierScheme ;
+    rdfs:label "CAS"@en ;
+    rdfs:comment "CAS Number (Chemical Abstracts Service)"@en ;
+    rdfs:seeAlso "https://www.cas.org/support/documentation/chemical-substances/faqs" ;
+    skos:altLabel "Chemical Abstracts Service Registry Number"@en ;
+    eudpp:identifierExampleValue "7732-18-5" ;
+    eudpp:identifierMaxLength 12 ;
+    eudpp:identifierMinLength 7 .
+
+eudpp:EORI a owl:NamedIndividual ;
+    rdfs:label "https://taxation-customs.ec.europa.eu/customs/customs-procedures-import-and-export/customs-operations/economic-operators-registration-and-identification-number-eori_en",
+        "EORI"@en ;
+    rdfs:comment """Economic Operators Registration and Identification (EU).
+This is the EU’s official identifier for companies involved in import/export.
+Mandatory for any company trading with the EU.
+
+Used in customs declarations
+Unique per company
+
+Format: country code + number (e.g., DE123456789)
+
+This is the most widely used identifier for economic operators in EU trade."""@en ;
+    skos:altLabel "Economic Operators Registration and Identification (EU"@en ;
+    eudpp:identifierExampleValue "DE123456789012345" ;
+    eudpp:identifierMaxLength 17 ;
+    eudpp:identifierMinLength 8 .
+
+eudpp:GLN a owl:NamedIndividual,
+        eudpp:ActorIdentifierScheme ;
+    rdfs:label "GLN"@en ;
+    rdfs:comment """A globally unique identifier defined by GS1 used to identify legal entities, functional entities, and physical locations within business and supply chain processes.
+
+Typically identifies: legal entities, functional entities (departments), physical locations (warehouses, sites)."""@en ;
+    rdfs:seeAlso "https://www.gs1.org/standards/id-keys/gln" ;
+    skos:altLabel "Global Location Number"@en ;
+    eudpp:identifierExampleValue "9501101530003" ;
+    eudpp:identifierMaxLength 13 ;
+    eudpp:identifierMinLength 13 ;
+    eudpp:identifierSchemeIssuer "GS1" .
+
+eudpp:GTIN a owl:NamedIndividual,
+        eudpp:ProductIdentifierScheme ;
+    rdfs:label "GTIN"@en ;
+    rdfs:comment "A globally unique identifier for trade items, defined by GS1, used to identify products at various packaging levels."@en ;
+    rdfs:seeAlso "https://www.gs1.org/standards/id-keys/gtin" ;
+    skos:altLabel "Global Trade Item Number"@en ;
+    skos:definition "A globally unique identifier for trade items, defined by GS1, used to identify products at various packaging levels."@en ;
+    eudpp:identifierExampleValue "14006381333938" ;
+    eudpp:identifierMaxLength 14 ;
+    eudpp:identifierMinLength 8 ;
+    eudpp:identifierSchemeIssuer "GS1" .
+
+eudpp:LEI a owl:NamedIndividual,
+        eudpp:ActorIdentifierScheme ;
+    rdfs:label "LEI"@en ;
+    rdfs:comment """A Legal Entity Identifier (LEI) is a globally unique 20-character alphanumeric code that identifies legally distinct entities participating in financial transactions, as defined by ISO 17442.
+
+A 20‑character code used globally for financial and regulatory reporting.
+Required for companies involved in financial transactions.
+Used by regulators, banks, customs, and some trade systems."""@en ;
+    rdfs:seeAlso "https://www.iso.org/standard/78829.html" ;
+    eudpp:identifierExampleValue "529900T8BM49AURSDO55" ;
+    eudpp:identifierMaxLength 20 ;
+    eudpp:identifierMinLength 20 ;
+    eudpp:identifierSchemeIssuer "ISO" .
+
+eudpp:SKU a owl:NamedIndividual,
+        eudpp:ProductIdentifierScheme ;
+    rdfs:label "SKU"@en ;
+    rdfs:comment "A Stock Keeping Unit (SKU) is an internal identifier assigned by an organization to uniquely identify and track a product, item, or variant within its own inventory and management systems."@en ;
+    rdfs:seeAlso "https://en.wikipedia.org/wiki/Stock_keeping_unit" ;
+    skos:altLabel "Stock Keeping Unit"@en ;
+    eudpp:identifierExampleValue "ABC-RED-XL" ;
+    eudpp:identifierMaxLength 50 ;
+    eudpp:identifierMinLength 1 .
+
+eudpp:identifierExampleValue a owl:DatatypeProperty ;
+    rdfs:label "Identifier example value"@en ;
+    rdfs:comment "Example value of the identifier"@en ;
+    rdfs:domain eudpp:IdentifierScheme ;
+    rdfs:range xsd:string .
+
+eudpp:identifierExpiresOn a owl:DatatypeProperty ;
+    rdfs:label "Identifier expires on"@en ;
+    rdfs:domain eudpp:Identifier ;
+    rdfs:range xsd:date .
+
+eudpp:identifierIssuedOn a owl:DatatypeProperty ;
+    rdfs:label "Identifier issued on"@en ;
+    rdfs:domain eudpp:Identifier ;
+    rdfs:range xsd:date .
+
+eudpp:identifierMaxLength a owl:DatatypeProperty ;
+    rdfs:label "Identifier maximum length"@en ;
+    rdfs:comment "Maximum length of the identifier"@en ;
+    rdfs:domain eudpp:IdentifierScheme ;
+    rdfs:range xsd:integer .
+
+eudpp:identifierMinLength a owl:DatatypeProperty ;
+    rdfs:label "Identifier minimum length"@en ;
+    rdfs:comment "Minimum length of the identifier"@en ;
+    rdfs:domain eudpp:IdentifierScheme ;
+    rdfs:range xsd:integer .
+
+eudpp:identifierPattern a owl:DatatypeProperty ;
+    rdfs:label "Identifier pattern"@en ;
+    rdfs:comment "A pattern the identifier conforms to, given as a regular expression (regex)."@en ;
+    rdfs:domain eudpp:IdentifierScheme ;
+    rdfs:range xsd:string .
+
+eudpp:identifierSchemeIssuer a owl:DatatypeProperty ;
+    rdfs:label "Identifier scheme issuer"@en ;
+    rdfs:comment "Issuer of the identifier scheme"@en ;
+    rdfs:domain eudpp:IdentifierScheme ;
+    rdfs:range xsd:string .
+
+eudpp:isMandatory a owl:AnnotationProperty .
+
+<https://purl.org/eudpp/IDENT> a owl:Ontology ;
+    rdfs:label "EU DPP IDENT"@en ;
+    dcterms:contributor "Riina Maigre"@en ;
+    dcterms:created "2026-04-13"@en ;
+    dcterms:creator "Tarmo Robal"@en ;
+    dcterms:description """MODULE: IDENT
+Identifier module of the EU DPP core ontology proposal of the CIRPASS-2 European project.
+
+The Identifier module proposes an universal approach for identifiers used in the EU DPP CO delivered by the CIRPASS-2 European Project.  
+The module describes identifiers used for the project through aspects and scheme references, if appropriate, granularity is added.
+---
+
+DESIGN RESTRICTION: Specific modules of the EU DPP CO need to use the Connector to establish a link to the Identifiers module. The link needs to be establsihed to a subclass of aIdentifier class, e.g., Product hasUniqueProductIdentifier ProductIdentifier.
+---
+
+DEPENDENCIES: This module may have dependencies to all  EU DPP Core Ontology (CO) modules that use different types of identifiers, including: CON, P_DPP, SOC, ACTOR, ...  
+--
+
+THIS DOCUMENT IS PROVIDED WITH NO WARRANTIES WHATSOEVER. 
+All liability for any damages arising from use or misuse of this vocabulary is with the user."""@en ;
+    dcterms:issued "2026-04-28"@en ;
+    dcterms:licence <https://www.apache.org/licenses/LICENSE-2.0>,
+        """This ontology is licensed under the Apache License, Version 2.0. 
+In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0)."""@en ;
+    dcterms:title "The Identifier (IDENT) module of the EU DPP core ontology proposed by the CIRPASS-2 European project."@en ;
+    vann1:preferredNamespacePrefix "ident" ;
+    rdfs:comment "First iteration of the Identifier module of the EU DPP core ontology proposal of the CIRPASS-2 European project."@en ;
+    owl:versionInfo "1.0.5" .
+
+<https://w3id.org/eudpp#identifierSchemeVersion> a owl:DatatypeProperty ;
+    rdfs:label "Identifier scheme version"@en ;
+    rdfs:comment "Reference standard version the instance schema refers to"@en ;
+    rdfs:domain eudpp:IdentifierScheme ;
+    rdfs:range xsd:string .
+
+eudpp:DPPIdentifier a owl:Class ;
+    rdfs:label "DPP identifier"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty eudpp:identifierValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        eudpp:Identifier ;
+    owl:disjointWith eudpp:FacilityIdentifier,
+        eudpp:MaterialIdentifier,
+        eudpp:ProductIdentifier,
+        eudpp:SoCIdentifier .
+
+eudpp:batch a owl:NamedIndividual,
+        eudpp:ProductIdentifierGranularity ;
+    rdfs:comment "According to ESPR Art 9 (2d) the digital product passport is to be established at model, batch or item level, and the definition of such levels is given by delegated acts;"@en .
+
+eudpp:hasGranularity a owl:ObjectProperty ;
+    rdfs:label "Has granularity"@en ;
+    rdfs:comment "Defines the granularity of an identifier, if exists."@en ;
+    rdfs:domain eudpp:Identifier ;
+    rdfs:range eudpp:IdentifierGranularity .
+
+eudpp:item a owl:NamedIndividual,
+        eudpp:ProductIdentifierGranularity ;
+    rdfs:comment "According to ESPR Art 9 (2d) the digital product passport is to be established at model, batch or item level, and the definition of such levels is given by delegated acts;"@en .
+
+eudpp:model a owl:NamedIndividual,
+        eudpp:ProductIdentifierGranularity ;
+    rdfs:comment "According to ESPR Art 9 (2d) the digital product passport is to be established at model, batch or item level, and the definition of such levels is given by delegated acts;"@en .
+
+xsd:date a rdfs:Datatype .
+
+eudpp:FacilityIdentifier a owl:Class ;
+    rdfs:label "Facility identifier"@en ;
+    rdfs:comment "A unique code assigned to a physical site (factory, warehouse, plant, school, hospital, etc.), i.e., identifies a location."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty eudpp:identifierValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        eudpp:Identifier ;
+    owl:disjointWith eudpp:MaterialIdentifier,
+        eudpp:ProductIdentifier,
+        eudpp:SoCIdentifier .
+
+eudpp:IdentifierGranularity a owl:Class ;
+    rdfs:label "Identifier granularity"@en ;
+    rdfs:comment "The granularity of the identifier. For example, for Productys this could be model, batch, item."@en .
+
+eudpp:ActorIdentifierScheme a owl:Class ;
+    rdfs:label "Actor identifier scheme"@en ;
+    rdfs:subClassOf eudpp:IdentifierScheme ;
+    owl:disjointWith eudpp:MaterialIdentifierScheme,
+        eudpp:ProductIdentifierScheme .
+
+eudpp:MaterialIdentifier a owl:Class ;
+    rdfs:label "Material identifier"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty eudpp:identifierValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty eudpp:hasScheme ;
+            owl:someValuesFrom eudpp:MaterialIdentifierScheme ],
+        eudpp:Identifier ;
+    owl:disjointWith eudpp:ProductIdentifier,
+        eudpp:SoCIdentifier .
+
+eudpp:MaterialIdentifierScheme a owl:Class ;
+    rdfs:label "Material identifier scheme"@en ;
+    rdfs:subClassOf eudpp:IdentifierScheme ;
+    owl:disjointWith eudpp:ProductIdentifierScheme .
+
+eudpp:hasScheme a owl:ObjectProperty ;
+    rdfs:label "Has scheme"@en ;
+    rdfs:comment "The scheme/standard the Identifier follows" ;
+    rdfs:domain eudpp:Identifier ;
+    rdfs:range eudpp:IdentifierScheme .
+
+eudpp:ProductIdentifier a owl:Class ;
+    rdfs:label "Product identifier"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass eudpp:ProductIdentifierGranularity ;
+            owl:onProperty eudpp:hasGranularity ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty eudpp:identifierValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty eudpp:hasScheme ;
+            owl:someValuesFrom eudpp:ProductIdentifierScheme ],
+        eudpp:Identifier ;
+    owl:disjointWith eudpp:SoCIdentifier .
+
+eudpp:ProductIdentifierGranularity a owl:Class ;
+    rdfs:label "Product identifier granularity"@en ;
+    rdfs:subClassOf eudpp:IdentifierGranularity ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:oneOf ( eudpp:batch eudpp:item eudpp:model ) ] .
+
+eudpp:ProductIdentifierScheme a owl:Class ;
+    rdfs:label "Product identifier scheme"@en ;
+    rdfs:subClassOf eudpp:IdentifierScheme .
+
+eudpp:SoCIdentifier a owl:Class ;
+    rdfs:label "Substance of concern identifier"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty eudpp:identifierValue ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        eudpp:Identifier .
+
+eudpp:identifierValue a owl:DatatypeProperty ;
+    rdfs:label "Identifier value"@en ;
+    rdfs:comment "The (unique) value of the identifier."@en ;
+    rdfs:domain eudpp:Identifier ;
+    rdfs:range xsd:string .
+
+eudpp:IdentifierScheme a owl:Class ;
+    rdfs:label "Identifier scheme"@en ;
+    rdfs:comment "The scheme or standard"@en .
+
+eudpp:Identifier a owl:Class ;
+    rdfs:comment """Identifier. A general class to hold different kinds of identifiers described and used for EU DPP CO. Each sub-class of this class describes a different kind of identifier. Intentionally modelled as sub-classes. 
+Identifiers have value, and a scheme/standard they are based on.
+
+Cardinatlity restrictions added to each subclass to enforce inheritance of the data propertyy identifierValue."""@en .
+

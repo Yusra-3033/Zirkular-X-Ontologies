@@ -1,0 +1,687 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix si: <https://si-digital-framework.org/SI#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+
+dcterms:contributor a owl:AnnotationProperty .
+
+dcterms:created a owl:AnnotationProperty .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:identifier a owl:AnnotationProperty .
+
+dcterms:issued a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:modified a owl:AnnotationProperty .
+
+dcterms:references a owl:AnnotationProperty .
+
+dcterms:source a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+skos:closeMatch a owl:AnnotationProperty .
+
+skos:exactMatch a owl:AnnotationProperty .
+
+<https://purl.org/eudpp#CarbonFootprint> a owl:Class ;
+    rdfs:label "Carbon footprint"@en ;
+    dcterms:references "ESPR Art 2 (25)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Carbon footprint
+means the sum of greenhouse gas emissions and greenhouse gas removals in a product system, expressed as CO equivalents and based on a life cycle assessment using the single impact category
+of climate change. (ESPR Art 2 25))
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#EnvironmentalFootprint> .
+
+<https://purl.org/eudpp#ConcentrationOfSubstanceOfConcern> a owl:Class ;
+    rdfs:label "Concentration of the substance of concern"@en ;
+    dcterms:references "ESPR Art 7(5)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment "The concentration of the substances of concern, at the level of the product, its relevant components, or spare parts ESPR Art 7(5)"@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#Durability> a owl:Class ;
+    rdfs:label "Durability"@en ;
+    dcterms:references "ESPR Art 2 (22)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Durability
+means the ability of a product to maintain over time its function and performance under specified conditions of use, maintenance and repair. (ESPR Art 2 (22))
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QualityIndicator> .
+
+<https://purl.org/eudpp#EmissionToAir> a owl:Class ;
+    rdfs:label "Emission to air"@en ;
+    dcterms:references "ESPR Annex I"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Product parameters are listed in the ESPR Annex I :
+
+(q) emissions to air, water or soil released in one or more lifecycle stages of the product as expressed through quantities and nature of emissions, including noise.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#EnvironmentalEmission> .
+
+<https://purl.org/eudpp#EmissionToSoil> a owl:Class ;
+    rdfs:label "Emission to soil"@en ;
+    dcterms:references "ESPR Annex I"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Product parameters are listed in the ESPR Annex I :
+
+(q) emissions to air, water or soil released in one or more lifecycle stages of the product as expressed through quantities and nature of emissions, including noise.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#EnvironmentalEmission> .
+
+<https://purl.org/eudpp#EmissionToWater> a owl:Class ;
+    rdfs:label "Emission to water"@en ;
+    dcterms:references "ESPR Annex I"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Product parameters are listed in the ESPR Annex I :
+
+(q) emissions to air, water or soil released in one or more lifecycle stages of the product as expressed through quantities and nature of emissions, including noise.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#EnvironmentalEmission> .
+
+<https://purl.org/eudpp#EnergyConsumption> a owl:Class ;
+    rdfs:label "Energy consumption"@en ;
+    rdfs:comment """Energy consumption of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ResourceConsumption> .
+
+<https://purl.org/eudpp#GTIN> a owl:DatatypeProperty ;
+    rdfs:label "GTIN"@en ;
+    dcterms:references "ESPR Annex III (c)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment "Global Trade Identification Number as provided for in standard ISO/IEC 15459-6 or equivalent of products or their parts."@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range xsd:string .
+
+<https://purl.org/eudpp#HazardousWasteAmount> a owl:Class ;
+    rdfs:label "Hazardous waste amount"@en ;
+    rdfs:comment """Hazardous waste amount of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#WasteGenerationAmount> .
+
+<https://purl.org/eudpp#Height> a owl:Class ;
+    rdfs:label "Height"@en ;
+    rdfs:comment "Height of the product"@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ProductDimension> .
+
+<https://purl.org/eudpp#LandUse> a owl:Class ;
+    rdfs:label "Land use"@en ;
+    rdfs:comment """Land use of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ResourceConsumption> .
+
+<https://purl.org/eudpp#Length> a owl:Class ;
+    rdfs:label "Length"@en ;
+    rdfs:comment "Length of the product"@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ProductDimension> .
+
+<https://purl.org/eudpp#MaterialFootprint> a owl:Class ;
+    rdfs:label "Material footprint"@en ;
+    dcterms:references "ESPR Art 2 (26)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Material footprint
+refers to the total amount of raw materials extracted to meet final consumption demands. (ESPR Art 2 (26))
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#EnvironmentalFootprint> .
+
+<https://purl.org/eudpp#MicroplasticRelease> a owl:Class ;
+    rdfs:label "Microplastic release"@en ;
+    dcterms:references "ESPR Annex I"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Product parameters as listed in the ESPR Annex I :
+
+(p) microplastic and nano plastic release as expressed through the release during relevant
+product life cycle stages, including manufacturing, transport, use and end of life stages;
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#PlasticsRelease> .
+
+<https://purl.org/eudpp#NanoplasticRelease> a owl:Class ;
+    rdfs:label "Nanoplastic release"@en ;
+    dcterms:references "ESPR Annex I"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Product parameters as listed in the ESPR Annex I :
+
+(p) microplastic and nano plastic release as expressed through the release during relevant
+product life cycle stages, including manufacturing, transport, use and end of life stages;
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#PlasticsRelease> .
+
+<https://purl.org/eudpp#PackagingWasteAmount> a owl:Class ;
+    rdfs:label "Packaging waste amount"@en ;
+    rdfs:comment """Packaging waste amount of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#WasteGenerationAmount> .
+
+<https://purl.org/eudpp#PlasticsWasteAmount> a owl:Class ;
+    rdfs:label "Plastics waste amount"@en ;
+    rdfs:comment """Hazardous waste amount of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#WasteGenerationAmount> .
+
+<https://purl.org/eudpp#ProductToPackagingRatio> a owl:Class ;
+    rdfs:label "Product to packaging ratio"@en ;
+    dcterms:references "ESPR Annex I"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """ESPR Annex I, the list of product parameters includes the parameter called the  product to packaging ratio.
+
+However, it is not specified in ESPR  whether that ratio is defined on the basis of weight or on the basis of volume.
+
+**This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards.**"""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#RecoverableRate> a owl:Class ;
+    rdfs:label "Recoverable rate"@en ;
+    rdfs:comment "This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#CircularEconomyIndicator> .
+
+<https://purl.org/eudpp#RecycledMaterialsUse> a owl:Class ;
+    rdfs:label "Recycled materials use"@en ;
+    rdfs:comment """Recycled materials use of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ResourceConsumption> .
+
+<https://purl.org/eudpp#RecyclingCollectionRate> a owl:Class ;
+    rdfs:label "Recycling collection rate"@en ;
+    rdfs:comment "This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#CircularEconomyIndicator> .
+
+<https://purl.org/eudpp#RecyclingRate> a owl:Class ;
+    rdfs:label "Recycling rate"@en ;
+    rdfs:comment "This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#CircularEconomyIndicator> .
+
+<https://purl.org/eudpp#Reliability> a owl:Class ;
+    rdfs:label "Reliability"@en ;
+    dcterms:references "ESPR Art 2 (16)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Reliability
+means the probability that a product functions as required under given conditions for a given
+duration without an occurrence which results in a primary or secondary function of the product no
+longer being performed. (ESPR Art 2 (16))
+
+Reliability is usually expressed in terms of mean time between failures (MTBF), which is the average length of time that a device will operate without failure.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QualityIndicator> .
+
+<https://purl.org/eudpp#SustainableRenewableMaterialsUse> a owl:Class ;
+    rdfs:label "Sustainable renewable materials use"@en ;
+    rdfs:comment """Sustainable renewable materials use of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ResourceConsumption> .
+
+<https://purl.org/eudpp#ThresholdOfSubstanceOfConcern> a owl:Class ;
+    rdfs:label "Threshold of substance of concern"@en ;
+    dcterms:references "ESPR FAQ 10.115, p59"@en ;
+    dcterms:source "https://circabc.europa.eu/ui/group/418195ae-4919-45fa-a959-3b695c9aab28/library/25c48e7c-9ce3-41cb-96ac-d2942a8a29d6/details" ;
+    rdfs:comment """Relevant threshold of Substance of Concern.
+
+By default, information on all substances of concern present in a product, above the  relevant thresholds, should be included in the DPP [ESPR FAQ 10.115, p59]"""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#Volume> a owl:Class ;
+    rdfs:label "Volume"@en ;
+    rdfs:comment "Volume of the product"@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ProductDimension> .
+
+<https://purl.org/eudpp#WaterConsumption> a owl:Class ;
+    rdfs:label "Water consumption"@en ;
+    rdfs:comment """Water consumption of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ResourceConsumption> .
+
+<https://purl.org/eudpp#Weight> a owl:Class ;
+    rdfs:label "Weight"@en ;
+    rdfs:comment "Weight of the product"@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ProductDimension> .
+
+<https://purl.org/eudpp#Width> a owl:Class ;
+    rdfs:label "Width"@en ;
+    rdfs:comment "Width of the product"@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#ProductDimension> .
+
+<https://purl.org/eudpp#appliesToProduct> a owl:ObjectProperty ;
+    rdfs:label "Applies to product"@en ;
+    rdfs:comment "The property links DPP and the Product."@en ;
+    rdfs:domain <https://purl.org/eudpp#DPP> ;
+    rdfs:range <https://purl.org/eudpp#Product> ;
+    owl:inverseOf <https://purl.org/eudpp#hasDPP> .
+
+<https://purl.org/eudpp#batch> a owl:NamedIndividual .
+
+<https://purl.org/eudpp#codeSet> a owl:DatatypeProperty ;
+    rdfs:label "Classification code set"@en ;
+    rdfs:comment """The product classification code set.
+
+See also Produc hasProductGroup ClassificationCode documentation."""@en ;
+    rdfs:domain <https://purl.org/eudpp#ClassificationCode> ;
+    rdfs:range xsd:anyURI .
+
+<https://purl.org/eudpp#codeValue> a owl:DatatypeProperty ;
+    rdfs:label "Classification code value"@en ;
+    rdfs:comment "Classification code value from the Classification code set."@en ;
+    rdfs:domain <https://purl.org/eudpp#ClassificationCode> ;
+    rdfs:range xsd:string .
+
+<https://purl.org/eudpp#commodityCode> a owl:DatatypeProperty ;
+    rdfs:label "Commodity code"@en ;
+    dcterms:references "ESPR Annex III (d)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment "Relevant commodity codes, such as a TARIC code as defined in Council Regulation (EEC) No 2658/87.[ESPR Annex III (d)]"@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range xsd:string .
+
+<https://purl.org/eudpp#contentType> a owl:DatatypeProperty ;
+    rdfs:label "Content type"@en ;
+    rdfs:comment "Content type of a document. Can be only “application” or “pdf”."@en ;
+    rdfs:domain <https://purl.org/eudpp#DocumentFormattedProperty> ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first "application" ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "pdf" ;
+                            rdf:rest () ] ] ] .
+
+<https://purl.org/eudpp#description> a owl:DatatypeProperty ;
+    rdfs:label "Description"@en ;
+    rdfs:comment "Product description"@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range xsd:string .
+
+<https://purl.org/eudpp#dictionaryReference> a owl:DatatypeProperty ;
+    rdfs:label "Dictionary reference"@en ;
+    rdfs:comment """The reference to the unique identifier of the data point specification defined in the repository/data dictionary.
+
+It is formatted as a URI/URL ."""@en ;
+    rdfs:domain <https://purl.org/eudpp#Property> ;
+    rdfs:range xsd:string .
+
+<https://purl.org/eudpp#dppStatus> a owl:DatatypeProperty ;
+    rdfs:label "DPP status"@en ;
+    rdfs:comment "The status of the DPP instance as digital resource."@en ;
+    rdfs:domain <https://purl.org/eudpp#DPP> ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first "Active" ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "Archived" ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first "Inactive" ;
+                                    rdf:rest [ a rdf:List ;
+                                            rdf:first "Invalid" ;
+                                            rdf:rest () ] ] ] ] ] .
+
+<https://purl.org/eudpp#granularity> a owl:DatatypeProperty ;
+    rdfs:label "Granularity"@en ;
+    dcterms:references "ESPR Art 9 (2) d"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """ESPR Art 9 (2) d  declares that the digital product passport is to be established at model, batch or item level, and the definition of such levels (is determined by delegated acts (DA));
+
+The product passport should be defined at the level of item, batch or product model, depending on specific needs and complexity of the value chain, the size, nature or impacts of the products considered. (Standardisation Request 5423 7)"""@en ;
+    rdfs:domain <https://purl.org/eudpp#DPP> ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first " batch" ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "item" ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first "model" ;
+                                    rdf:rest () ] ] ] ] .
+
+<https://purl.org/eudpp#hasMeasurementUnit> a owl:ObjectProperty ;
+    rdfs:label "Has measurement unit"@en ;
+    rdfs:comment "Linking quantitative property to the unit of measurement."@en ;
+    rdfs:domain <https://purl.org/eudpp#QuantitativeProperty> ;
+    rdfs:range si:MeasurementUnit .
+
+<https://purl.org/eudpp#hasProductGroup> a owl:ObjectProperty ;
+    rdfs:label "Has product group"@en ;
+    dcterms:references "ESPR Art 2 (4)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Product group
+means a set of products that serve similar purposes and are similar in terms of use, or have similar
+functional properties, and are similar in terms of consumer perception (ESPR Art 2 (4)). The product
+group or groups covered are given by delegated acts. (ESPR Art 8 (a))
+
+This will be probably a classification code from some product classification scheme ."""@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range <https://purl.org/eudpp#ClassificationCode> .
+
+<https://purl.org/eudpp#hasProperty> a owl:ObjectProperty ;
+    rdfs:label "Has property"@en ;
+    rdfs:comment """Product has a property that could be a document or some measurable properties (measurands).
+
+Linking the product to the property."""@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range <https://purl.org/eudpp#Property> .
+
+<https://purl.org/eudpp#isComponentOf> a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "Is component of"@en ;
+    dcterms:references "ESPR Art 2(2)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """A product is a component of another product.
+
+‘component’ means a product intended to be incorporated into another product; [ESPR Art 2(2)]"""@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range <https://purl.org/eudpp#Product> .
+
+<https://purl.org/eudpp#isEnergyRelated> a owl:DatatypeProperty ;
+    rdfs:label "Is energy related Product"@en ;
+    dcterms:references "ESPR Art 2 (4)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Energy related product
+means any product that has an impact on energy consumption during use. (ESPR Art 2 (4)).
+
+The boolean data type property indicates is a Product energy related or not?"""@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range xsd:boolean .
+
+<https://purl.org/eudpp#isSparePartOf> a owl:ObjectProperty ;
+    rdfs:label "Is spare part of"@en ;
+    dcterms:references "ESPR Annex I"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment "A product is a spare part of another product."@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range <https://purl.org/eudpp#Product> .
+
+<https://purl.org/eudpp#item> a owl:NamedIndividual .
+
+<https://purl.org/eudpp#lastUpdate> a owl:DatatypeProperty ;
+    rdfs:label "Last update"@en ;
+    rdfs:comment "The date and time of the latest update to the DPP instance."@en ;
+    rdfs:domain <https://purl.org/eudpp#DPP> ;
+    rdfs:range xsd:dateTimeStamp .
+
+<https://purl.org/eudpp#linkToPreviousDPP> a owl:DatatypeProperty ;
+    rdfs:label "Link to previous DPP"@en ;
+    dcterms:references "https://eur-lex.europa.eu/eli/reg/2024/1781/oj",
+        "ESPR Art 11 (d)"@en ;
+    rdfs:comment "Where a new digital product passport is created for a product that already has a digital product passport, the new digital product passport shall be linked to the original digital product passport or passports. (ESPR Art 11 (d))"@en ;
+    rdfs:domain <https://purl.org/eudpp#DPP> ;
+    rdfs:range xsd:anyURI .
+
+<https://purl.org/eudpp#model> a owl:NamedIndividual .
+
+<https://purl.org/eudpp#numericalValue> a owl:DatatypeProperty ;
+    rdfs:label "Numerical value"@en ;
+    rdfs:comment "The numerical value of the quantity, i.e., quantitative property of the product."@en ;
+    rdfs:domain <https://purl.org/eudpp#QuantitativeProperty> ;
+    rdfs:range xsd:decimal .
+
+<https://purl.org/eudpp#productImage> a owl:DatatypeProperty ;
+    rdfs:label "Product image"@en ;
+    rdfs:comment "An image of the product."@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range xsd:anyURI .
+
+<https://purl.org/eudpp#productName> a owl:DatatypeProperty ;
+    rdfs:label "Product name"@en ;
+    rdfs:comment "Product name"@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range xsd:string .
+
+<https://purl.org/eudpp#tolerance> a owl:DatatypeProperty ;
+    rdfs:label "Tolerance"@en ;
+    rdfs:comment """Engineering tolerance is the permissible variation in measurements deriving from the base measurement.
+Tolerances can apply to many different units."""@en ;
+    rdfs:domain <https://purl.org/eudpp#QuantitativeProperty> ;
+    rdfs:range xsd:double .
+
+<https://purl.org/eudpp#validFrom> a owl:DatatypeProperty ;
+    rdfs:label "Valid from"@en ;
+    rdfs:comment "The date and timestamp that the DPP is valid from."@en ;
+    rdfs:domain <https://purl.org/eudpp#DPP> ;
+    rdfs:range xsd:dateTimeStamp .
+
+<https://purl.org/eudpp#validUntil> a owl:DatatypeProperty ;
+    rdfs:label "Valid until"@en ;
+    rdfs:comment "The date and timestamp that the DPP is valid until."@en ;
+    rdfs:domain <https://purl.org/eudpp#DPP> ;
+    rdfs:range xsd:dateTimeStamp .
+
+<https://purl.org/eudpp#value> a owl:DatatypeProperty ;
+    rdfs:label "Value related to the document"@en ;
+    rdfs:comment """Contains the data of the value encapsulated in the Document.
+
+Value is xsd:string that is formatted as a URL,  where to fetch the file."""@en ;
+    rdfs:domain <https://purl.org/eudpp#DocumentFormattedProperty> ;
+    rdfs:range xsd:string .
+
+<https://purl.org/eudpp#webLink> a owl:DatatypeProperty ;
+    rdfs:label "Weblink"@en ;
+    rdfs:comment "Web link to an instruction document or video etc."@en ;
+    rdfs:domain <https://purl.org/eudpp#DigitalInstruction> ;
+    rdfs:range xsd:anyURI .
+
+<https://purl.org/eudpp/P_DPP> a owl:Ontology ;
+    rdfs:label "EU DPP CO P_DPP"@en ;
+    dcterms:bibliographicCitation <https://doi.org/10.5281/zenodo.15270342> ;
+    dcterms:contributor "Riina Maigre"@en,
+        "Tarmo Robal"@en,
+        "Theodor Chirvasuta"@en ;
+    dcterms:created "2025-01-29" ;
+    dcterms:creator "Hele-Mai Haav (up until version 1.7.1 incl.), further maintained by contributors."@en ;
+    dcterms:description """The EU DPP core ontology proposed in CIRPASS-2 European project  is a shared formal specification of basic concepts and properties/relationships in the cross-sectorial DPP domain to facilitate knowledge sharing across sector-specific DPPs.
+
+The proposed  EU DPP core ontology captures several modules from which the Product and DPP module plays a central role.
+
+DEPENDENCIES:  This module has dependencies to the following EU DPP Core Ontology (CO) modules: CON, ACTOR, SOC.  
+
+For more information, see 
+Maigre, R., Haav, H.-M., Robal, T., Wolf, M.-A., & Danash, F. (2025). Ontology Requirements Specification for an EU DPP Core Ontology Proposal (1.1). CIRPASS-2 Consortium. https://doi.org/10.5281/zenodo.15270342
+
+=======================
+
+30 April 2026 - Release v.2.0.0
+
+CHANGES APR 2026 (switch to IDENT module) (v.1.9.4)
+1. The following data properties become obsolete:
+ - #uniqueProductIdentifier
+ - #uniqueProductIdentifierScheme
+Instead, use object property hasUniqueProductIdentifier with domain as Product and Range as ProductIdentifier declased in the Connector.
+2. The following data properties become obsolete:
+- #digitalProductPassportId
+- #dppSchemaVersion 
+Instead, use object property hasDigitalProductPassportId with domain as DPP and range as #DPPIdentifier.
+
+
+CHANGES APR 2026 (JTC24 alignment) (v.1.9.2)
+1. Added additional values for range: Inactive, Invalid for data property DPP status
+2. Rename #status to #dppStatus, change of IRI.
+3. Rename #uniqueDPPID to #digitalProductPassportId, change of IRI, label and range.
+4. Rename #schemaVersion to #dppSchemaVersion, change of IRI, label.
+5. Changing data property #granularity range to model, batch or item (refactoring product to item). 
+
+CHANGES FEB 2026 (v.1.9.1)
+1. Alignment with design principles
+2. skos:exactMatch for Product changed to more appropriate skos:closeMatch
+3. Renamed uniqueProductID to uniqueProductIdentifier
+4. Added uniqueProductIdentifierScheme
+5. Removed #facilityID. Now described through ACTOR module.
+6. #Document renamed to #DocumentFormattedProperty
+7. The following object properties were removed and added to connector:
+ #containsSubstanceOfConcern
+ #hasEconomicOperator
+ #hasBackUpCopyHost
+ #hasIssuer 
+ #hasManufacturer"""@en ;
+    dcterms:issued "2026-04-30" ;
+    dcterms:license <https://www.apache.org/licenses/LICENSE-2.0>,
+        """This ontology is licensed under the Apache License, Version 2.0. 
+In case of dispute over Apache 2.0 applicability, or in case considering the ontology as a document, this ontology document is to be considered licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0)."""@en ;
+    dcterms:title "The Product and DPP module of an EU regulatory compliant Digital Product Passport Core Ontology (EU DPP CO) proposed by the CIRPASS-2 European project."@en ;
+    vann:preferredNamespacePrefix "dpp" ;
+    rdfs:comment "The Product and DPP module of an EU DPP core ontology proposed by the CIRPASS-2 European project."@en ;
+    owl:versionInfo "2.0.0" .
+
+<https://purl.org/eudpp#DigitalInstruction> a owl:Class ;
+    rdfs:label "DigitalInstruction"@en ;
+    dcterms:references "ESPR Art 27(7)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Digital instructions
+mean instructions in digital format concerning the product (‘digital instructions’) in a language that can be easily understood. ESPR Art 27(7)
+Digital instructions are ensured by manufacturers. These should also ensured by importers. (ESPR Art 29(4))
+
+This class can be extended/specialised according to delegated acts or industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#DocumentFormattedProperty> .
+
+<https://purl.org/eudpp#hasDPP> a owl:ObjectProperty ;
+    rdfs:label "Has DPP"@en ;
+    rdfs:comment "A Product has a DPP. The property links a Product with a DPP."@en ;
+    rdfs:domain <https://purl.org/eudpp#Product> ;
+    rdfs:range <https://purl.org/eudpp#DPP> .
+
+si:MeasurementUnit a owl:Class ;
+    rdfs:label "Unit of measurement"@en ;
+    rdfs:comment """Measurement unit defining the magnitude of the quantity in respect to the value.
+si:MeasurementUnit class is reused"""@en .
+
+<https://purl.org/eudpp#EnvironmentalFootprint> a owl:Class ;
+    rdfs:label "Environmental footprint"@en ;
+    dcterms:references "ESPR Art 2 (24)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Environmental footprint
+means a quantification of the environmental impacts resulting from a product throughout its life
+cycle, whether in relation to a single environmental impact category or an aggregated set of impact
+categories based on the Product Environmental Footprint method established by Recommendation
+(EU) 2 021/2279 or other scientific methods developed by international organisations, widely tested
+in collaboration with different industry sectors and adopted or implemented by the Commission in
+other Union law. (ESPR Art 2 (24)).
+
+Product parameters list ESPR Annex I
+(m) The environmental footprint of the product, expressed as a quantification;
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#EnvironmentalPollution> a owl:Class ;
+    rdfs:label "Environmental pollution"@en ;
+    rdfs:comment """Environmental pollution is the addition of any substance or form of energy to the environment at a rate faster than it can be dispersed or safely stored.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:seeAlso <https://www.britannica.com/science/pollution-environment> ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#PlasticsRelease> a owl:Class ;
+    rdfs:label "Plastic release"@en ;
+    dcterms:references "ESPR Annex I"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Product parameters as listed in the ESPR Annex I :
+
+(p) microplastic and nano plastic release as expressed through the release during relevant
+product life cycle stages, including manufacturing, transport, use and end of life stages;
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#EnvironmentalPollution> .
+
+<https://purl.org/eudpp#QualityIndicator> a owl:Class ;
+    rdfs:label "Quality indicator"@en ;
+    rdfs:comment """Product characteristics like durability and reliability.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#CircularEconomyIndicator> a owl:Class ;
+    rdfs:label "Circular Economy Indicator"@en ;
+    rdfs:comment """Circular Economy indicators are measures for relevant monitoring the transition to a circular economy and to measure the effects of new policy and trends.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:seeAlso <https://environment.ec.europa.eu/strategy/circular-economy-action-plan_en> ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#ClassificationCode> a owl:Class ;
+    rdfs:label "ClassificationCode"@en ;
+    rdfs:comment "A classification code from some product classification scheme ."@en .
+
+<https://purl.org/eudpp#DocumentFormattedProperty> a owl:Class ;
+    rdfs:label "Document"@en ;
+    rdfs:comment "The document class describes the semantic representation of any instance of a document that might be required to be included into a digital product passport instance."@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#Property> .
+
+<https://purl.org/eudpp#EnvironmentalEmission> a owl:Class ;
+    rdfs:label "Environmental emission"@en ;
+    rdfs:comment """Emission is the act or amount of sending out gas, heat, light, etc. It can also refer to harmful substances that are released into the environment, especially carbon dioxide.
+
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:seeAlso <https://dictionary.cambridge.org/dictionary/english/emission> ;
+    rdfs:subClassOf <https://purl.org/eudpp#EnvironmentalPollution> .
+
+<https://purl.org/eudpp#WasteGenerationAmount> a owl:Class ;
+    rdfs:label "Waste generation amount"@en ;
+    rdfs:comment """Waste generation amount of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#Property> a owl:Class ;
+    rdfs:label "Property"@en ;
+    rdfs:comment "A property of the product."@en .
+
+<https://purl.org/eudpp#ProductDimension> a owl:Class ;
+    rdfs:label "Product dimension"@en ;
+    dcterms:references "ESPR Annex I"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Dimension class covers measurements of length, width, height, volume, and weight of the product required by
+ESPR Annex I in its product parameters"""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#ResourceConsumption> a owl:Class ;
+    rdfs:label "Resource consumption"@en ;
+    rdfs:comment """Resource consumption of the product.
+
+This class description needs to be extended/specialised according to the corresponding delegated acts or/and industry standards."""@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#QuantitativeProperty> .
+
+<https://purl.org/eudpp#DPP> a owl:Class ;
+    rdfs:label "Digital Product Passport (DPP)"@en ;
+    dcterms:references "ESPR Art 2 (28)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment """Digital Product Passport (DPP) means a set of data specific to a product that includes the information specified in the applicable
+delegated act adopted pursuant to Article 4 and that is accessible via electronic means through a data carrier in accordance with Chapter III. (ESPR Art 2 (28))"""@en .
+
+<https://purl.org/eudpp#QuantitativeProperty> a owl:Class ;
+    rdfs:label "Quantitative Property"@en ;
+    rdfs:comment "A property (respectively measurand of a property) of the product (model) that is expressed by a quantity value. A specific quantity."@en ;
+    rdfs:subClassOf <https://purl.org/eudpp#Property> .
+
+<https://purl.org/eudpp#Product> a owl:Class ;
+    rdfs:label "Product"@en ;
+    dcterms:references "ESPR Art 2 (1)"@en ;
+    dcterms:source "https://eur-lex.europa.eu/eli/reg/2024/1781/oj" ;
+    rdfs:comment "Product means any physical goods that are placed on the market or put into service. ESPR Art 2 (1))"@en ;
+    skos:closeMatch "schema:Product" .
+
+[] rdfs:comment "The EU DPP core ontology" .
+
