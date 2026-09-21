@@ -1,0 +1,344 @@
+# baseURI: https://w3id.org/zirkular-x/example/demo
+# prefix: demo
+
+@prefix dpp-comp: <http://w3id.org/dppo/ontology/dpp-comp/> .
+@prefix dpp-core: <http://w3id.org/dppo/ontology/dpp-core/> .
+@prefix dpp-info: <http://w3id.org/dppo/ontology/dpp-info/> .
+@prefix dpp-odp: <http://w3id.org/dppo/ontology/dpp-odp/> .
+@prefix dpp-prov: <http://w3id.org/dppo/ontology/dpp-prov/> .
+@prefix ex: <https://w3id.org/zirkular-x/example/demo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix zx: <https://w3id.org/zirkular-x/ext#> .
+@prefix zxd: <https://w3id.org/zirkular-x/dictionary#> .
+
+<https://w3id.org/zirkular-x/example/demo>
+  rdf:type owl:Ontology ;
+  rdfs:comment "Hand-built passport on the hand-built TBox, coverage parity with the EuDPP-side example: Parameterliste rows 1..32 (through Materialzusammensetzung)."@en ;
+  owl:imports <https://w3id.org/zirkular-x/dppo-conn> ;
+  owl:imports <https://w3id.org/zirkular-x/dppo-shapes> .
+
+# --- actors ---
+ex:facility-manager a dpp-prov:ValueChainActor ; rdfs:label "Facility management" .
+
+ex:muster-gmbh a dpp-prov:ValueChainActor , vcard:Organization ;
+  rdfs:label "Muster Klimatechnik GmbH" ;
+  vcard:fn "Muster Klimatechnik GmbH" ;
+  vcard:hasAddress [ a vcard:Address ;
+      vcard:street-address "Musterallee 12" ;
+      vcard:postal-code "44801" ;
+      vcard:locality "Bochum" ;
+      vcard:country-name "DE" ] ;
+  vcard:hasTelephone [ a vcard:Voice ; vcard:hasValue <tel:+49-234-000000> ] ;
+  vcard:hasEmail <mailto:info@muster-klima.example> ;
+  vcard:hasURL <https://www.muster-klima.example> .
+
+# --- the machine and its parts ---
+ex:rlt-01 a zx:VentilationUnit ;
+  rdfs:label "Air handling unit RLT-01" ;
+  dpp-odp:hasPart ex:fan-01 ;
+  zx:hasIdentifier ex:id-rlt-01 .
+
+ex:fan-01 a zx:Fan ; rdfs:label "Supply air fan" .
+
+ex:mat-steel a dpp-core:Material ; rdfs:label "Verzinktes Stahlblech (pulverbeschichtet, Gehaeusewaende)"@de .
+ex:mat-alu a dpp-core:Material ; rdfs:label "Aluminium (Rahmenprofile, Rotorstruktur)"@de .
+ex:mat-copper a dpp-core:Material ; rdfs:label "Kupfer (Registerrohre)"@de .
+ex:mat-mineralwool a dpp-core:Material ; rdfs:label "Mineralwolle (Gehaeusedaemmung, nicht brennbar, 50 mm)"@de .
+ex:mat-plastics a dpp-core:Material ; rdfs:label "Kunststoffe/Elastomere (Dichtungen, Filterrahmen, Griffe)"@de .
+ex:mat-electronics a dpp-core:Material ; rdfs:label "Elektronik/Leistungshalbleiter (Motoren, Umrichter)"@de .
+
+# --- identifier (EN 18219; row 1 legacy value kept) ---
+ex:id-rlt-01 a zx:Identifier ;
+  zx:identifierValue "https://id.zirkular-x.example/01/rlt-01" ;
+  zx:legacyIdentifierValue "RLT-1998-0042" ;
+  zx:granularity zx:item .
+
+# --- the passport ---
+ex:dpp-rlt-01 a dpp-odp:DPP ;
+  dpp-odp:describes ex:rlt-01 ;
+  dpp-prov:dppOwner ex:muster-gmbh ;
+  dpp-prov:creationTimeStamp "2026-09-10T08:30:00Z"^^xsd:dateTime ;
+  zx:uniqueProductIdentifier "https://id.zirkular-x.example/01/rlt-01"^^xsd:anyURI ;
+  zx:dppStatus zx:active ;
+  dpp-info:containsInformation ex:st-airflow ,
+    ex:st-place-mfg , ex:st-date-mfg , ex:st-use , ex:st-users , ex:st-conditions , ex:st-life-avg , ex:st-life-min , ex:st-dimensions , ex:st-weight , ex:st-category , ex:st-status , ex:st-hazard , ex:st-crm , ex:st-recycled , ex:st-renewable , ex:st-reused , ex:st-separable , ex:st-biodegradable ,
+    ex:st-material-steel , ex:st-material-alu , ex:st-material-copper , ex:st-material-mineralwool , ex:st-material-plastics , ex:st-material-electronics ,
+    ex:class-din276 , ex:class-cpr , ex:ev-production , ex:ev-disassembly-fan .
+
+# --- her original fact, unchanged ---
+ex:st-airflow
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.airflow.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:AirflowRate ;
+  dpp-info:value "5000.0"^^xsd:decimal ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-10T08:31:00Z"^^xsd:dateTime .
+
+# --- product information, rows 4..16 and material block rows 26..32 ---
+ex:st-place-mfg
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.place-of-manufacture.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:PlaceOfManufacture ;
+  dpp-info:value "DE" ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-date-mfg
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.date-of-manufacture.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:DateOfManufacture ;
+  dpp-info:value "1998-04-30"^^xsd:date ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-use
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.intended-use.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:IntendedUse ;
+  dpp-info:value "Zu- und Abluftanlage fuer Bueroflaechen"@de , "Supply and extract air handling for office areas"@en ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-users
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.intended-users.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:IntendedUsers ;
+  dpp-info:value "Facility Management, qualifizierte TGA-Fachkraefte"@de ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-conditions
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.conditions-of-use.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:ConditionsOfUse ;
+  dpp-info:value "Innenaufstellung, Betrieb +5 bis +40 Grad C, nicht kondensierend"@de ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-life-avg
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.service-life-avg.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:EstimatedAverageServiceLife ;
+  dpp-info:value "20"^^xsd:decimal ;
+  dpp-info:unit unit:YR ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-life-min
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.service-life-min.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:EstimatedMinimumServiceLife ;
+  dpp-info:value "15"^^xsd:decimal ;
+  dpp-info:unit unit:YR ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-dimensions
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.nominal-dimensions.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:NominalDimensions ;
+  dpp-info:value "L 1600 x B 800 x H 1800 mm" ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-weight
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.weight.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:Weight ;
+  dpp-info:value "850"^^xsd:decimal ;
+  dpp-info:unit unit:KiloGM ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-category
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.product-category.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:ProductCategory ;
+  dpp-info:value "Raumlufttechnische Geraete"@de ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-status
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.product-status.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:ProductStatus ;
+  dpp-info:value "unveraendert (Erstnutzung am urspruenglichen Einbauort)"@de ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-hazard
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.hazardous-substances.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:HazardousSubstancesContained ;
+  dpp-info:value "Keine; konform nach REACH und RoHS, bleifreie Lote, frei von Cr(VI)"@de ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-crm
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.critical-raw-materials.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:CriticalRawMaterialsShare ;
+  dpp-info:value "0"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-recycled
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.recycled-content.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:RecycledContent ;
+  dpp-info:value "0.1"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-renewable
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.renewable-content.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:RenewableContent ;
+  dpp-info:value "0"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-reused
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.reused-content.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:ReusedContent ;
+  dpp-info:value "0"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-separable
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.separable-content.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:SeparableByTypeContent ;
+  dpp-info:value "100"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  rdfs:comment "Sehr gut zerstoerungsfrei loesbar: Slide-out-System bei Ventilatoren und Rotor, verschraubte Bauteile gut loesbar."@de ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+ex:st-biodegradable
+  rdf:type zx:ParameterStatement ;
+  zx:elementId "rlt-01.biodegradability.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:Biodegradability ;
+  dpp-info:value "0"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:30:00Z"^^xsd:dateTime .
+
+# --- material composition, row 25 ---
+ex:st-material-steel
+  rdf:type zx:MaterialStatement ;
+  zx:elementId "rlt-01.material.steel.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:MaterialComposition ;
+  dpp-comp:aboutWhole ex:rlt-01 ;
+  dpp-comp:aboutPart ex:mat-steel ;
+  dpp-info:value "68"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:35:00Z"^^xsd:dateTime .
+
+ex:st-material-alu
+  rdf:type zx:MaterialStatement ;
+  zx:elementId "rlt-01.material.alu.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:MaterialComposition ;
+  dpp-comp:aboutWhole ex:rlt-01 ;
+  dpp-comp:aboutPart ex:mat-alu ;
+  dpp-info:value "14"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:35:00Z"^^xsd:dateTime .
+
+ex:st-material-copper
+  rdf:type zx:MaterialStatement ;
+  zx:elementId "rlt-01.material.copper.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:MaterialComposition ;
+  dpp-comp:aboutWhole ex:rlt-01 ;
+  dpp-comp:aboutPart ex:mat-copper ;
+  dpp-info:value "3"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:35:00Z"^^xsd:dateTime .
+
+ex:st-material-mineralwool
+  rdf:type zx:MaterialStatement ;
+  zx:elementId "rlt-01.material.mineralwool.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:MaterialComposition ;
+  dpp-comp:aboutWhole ex:rlt-01 ;
+  dpp-comp:aboutPart ex:mat-mineralwool ;
+  dpp-info:value "9"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:35:00Z"^^xsd:dateTime .
+
+ex:st-material-plastics
+  rdf:type zx:MaterialStatement ;
+  zx:elementId "rlt-01.material.plastics.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:MaterialComposition ;
+  dpp-comp:aboutWhole ex:rlt-01 ;
+  dpp-comp:aboutPart ex:mat-plastics ;
+  dpp-info:value "4"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:35:00Z"^^xsd:dateTime .
+
+ex:st-material-electronics
+  rdf:type zx:MaterialStatement ;
+  zx:elementId "rlt-01.material.electronics.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  dpp-info:characteristic zxd:MaterialComposition ;
+  dpp-comp:aboutWhole ex:rlt-01 ;
+  dpp-comp:aboutPart ex:mat-electronics ;
+  dpp-info:value "2"^^xsd:decimal ;
+  dpp-info:unit unit:PERCENT ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:35:00Z"^^xsd:dateTime .
+
+# --- classifications, rows 2..3 ---
+ex:class-din276 a zx:ClassificationStatement ;
+  zx:elementId "rlt-01.classification.din276.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  zx:din276CostGroup zx:kg430 ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:40:00Z"^^xsd:dateTime .
+
+ex:class-cpr a zx:ClassificationStatement ;
+  zx:elementId "rlt-01.classification.cpr.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  zx:cprAnnexVIIClass "ausstehend (BauPVO Anhang VII)" ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:41:00Z"^^xsd:dateTime .
+
+# --- life-cycle events, rows 5, 14, 15 ---
+ex:ev-production a zx:LifeCycleEventStatement ;
+  zx:elementId "rlt-01.event.production.1" ;
+  dpp-info:isAbout ex:rlt-01 ;
+  zx:eventType zx:production ;
+  zx:eventDate "1998-04-30"^^xsd:date ;
+  zx:eventLocation "Werk Bochum, DE" ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:42:00Z"^^xsd:dateTime .
+
+ex:ev-disassembly-fan a zx:LifeCycleEventStatement ;
+  zx:elementId "fan-01.event.disassembly.1" ;
+  dpp-info:isAbout ex:fan-01 ;
+  zx:eventType zx:disassembly ;
+  zx:eventDate "2019-03-11"^^xsd:date ;
+  zx:eventLocation "Werkstatt Muster Klimatechnik, Bochum" ;
+  dpp-prov:responsibleActor ex:facility-manager ;
+  dpp-prov:creationTimeStamp "2026-09-18T11:43:00Z"^^xsd:dateTime .
