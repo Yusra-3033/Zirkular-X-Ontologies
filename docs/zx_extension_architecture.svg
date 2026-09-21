@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="32 129 896 350" width="896" height="350" font-family="Arial, Helvetica, sans-serif">
+<rect x="32" y="129" width="896" height="350" fill="#FFFFFF"/>
+<rect x="48.0" y="145.0" width="270.0" height="75.0" fill="#F8CECC" stroke="#003560" stroke-width="1.00"/>
+<rect x="365.0" y="265.0" width="280.0" height="75.0" fill="#E1D5E7" stroke="#003560" stroke-width="1.00"/>
+<rect x="680.0" y="145.0" width="230.0" height="75.0" fill="#FFF2CC" stroke="#003560" stroke-width="1.00"/>
+<polyline points="365.0,302.5 183.0,302.5 183.0,220.0" fill="none" stroke="#003560" stroke-width="1.40"/>
+<polygon points="183.0,220.0 186.8,228.2 179.2,228.2" fill="#003560" stroke="#003560" stroke-width="1"/>
+<polyline points="645.0,302.5 795.0,302.5 795.0,220.0" fill="none" stroke="#003560" stroke-width="1.40"/>
+<polygon points="795.0,220.0 798.8,228.2 791.2,228.2" fill="#003560" stroke="#003560" stroke-width="1"/>
+<text x="183.0" y="177.0" font-size="20.0" text-anchor="middle"><tspan fill="#003560">DPPO 0.1</tspan></text>
+<text x="183.0" y="202.0" font-size="20.0" text-anchor="middle"><tspan fill="#003560">Five reused modules</tspan></text>
+<text x="505.0" y="297.3" font-size="19.0" text-anchor="middle"><tspan fill="#003560">zx-dppo-conn.ttl</tspan></text>
+<text x="505.0" y="321.0" font-size="19.0" text-anchor="middle"><tspan fill="#003560">Bridge between namespaces</tspan></text>
+<text x="795.0" y="177.3" font-size="19.0" text-anchor="middle"><tspan fill="#003560">zx-core.ttl</tspan></text>
+<text x="795.0" y="201.0" font-size="19.0" text-anchor="middle"><tspan fill="#003560">Building services classes and statements</tspan></text>
+<text x="257.5" y="253.7" font-size="13.0" text-anchor="middle" fill="none" stroke="#FFFFFF" stroke-width="3">maps classes</text>
+<text x="257.5" y="253.7" font-size="13.0" text-anchor="middle"><tspan fill="#003560">maps classes</tspan></text>
+<text x="755.0" y="253.7" font-size="13.0" text-anchor="middle" fill="none" stroke="#FFFFFF" stroke-width="3">integrates domain model</text>
+<text x="755.0" y="253.7" font-size="13.0" text-anchor="middle"><tspan fill="#003560">integrates domain model</tspan></text>
+<text x="52.0" y="396.1" font-size="19.0" text-anchor="start" fill="none" stroke="#FFFFFF" stroke-width="3">BuildingProduct → core:Component</text>
+<text x="52.0" y="396.1" font-size="19.0" text-anchor="start"><tspan fill="#003560">BuildingProduct → core:Component</tspan></text>
+<text x="52.0" y="419.9" font-size="19.0" text-anchor="start" fill="none" stroke="#FFFFFF" stroke-width="3">Statement → info:DPPInformation</text>
+<text x="52.0" y="419.9" font-size="19.0" text-anchor="start"><tspan fill="#003560">Statement → info:DPPInformation</tspan></text>
+<text x="499.0" y="394.3" font-size="17.0" text-anchor="start" fill="none" stroke="#FFFFFF" stroke-width="3">ParameterStatement → ProductCharacteristic</text>
+<text x="499.0" y="394.3" font-size="17.0" text-anchor="start"><tspan fill="#003560">ParameterStatement → ProductCharacteristic</tspan></text>
+<text x="499.0" y="415.6" font-size="17.0" text-anchor="start" fill="none" stroke="#FFFFFF" stroke-width="3">MaterialStatement → CompositionInformation</text>
+<text x="499.0" y="415.6" font-size="17.0" text-anchor="start"><tspan fill="#003560">MaterialStatement → CompositionInformation</tspan></text>
+<text x="52.0" y="456.5" font-size="15.0" text-anchor="start" fill="none" stroke="#FFFFFF" stroke-width="3">As-is state from zx-core.ttl and zx-dppo-conn.ttl · details in the draw.io file</text>
+<text x="52.0" y="456.5" font-size="15.0" text-anchor="start"><tspan fill="#003560">As-is state from zx-core.ttl and zx-dppo-conn.ttl · details in the draw.io file</tspan></text>
+</svg>

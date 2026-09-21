@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1520 1120" width="1520" height="1120" font-family="Helvetica, Arial, sans-serif">
+<rect width="1520" height="1120" fill="#FFFFFF"/>
+<text x="40" y="34" font-size="17" font-weight="bold" fill="#000000">DPPO 0.1 (Digital Product Passport Ontology)  |  Modulstruktur, TBox</text>
+<rect x="40" y="60" width="300" height="560" rx="6" fill="#FFF2CC" stroke="#D6B656" stroke-width="1.6" stroke-dasharray="9 5"/>
+<text x="52" y="84" font-size="14" font-weight="bold" fill="#000000">DPP-CORE  (Produkttypen)</text>
+<rect x="560" y="60" width="360" height="300" rx="6" fill="#F8CECC" stroke="#B85450" stroke-width="1.6" stroke-dasharray="9 5"/>
+<text x="572" y="84" font-size="14" font-weight="bold" fill="#000000">DPP-ODP  (Kernmuster)</text>
+<rect x="990" y="60" width="430" height="400" rx="6" fill="#D5E8D4" stroke="#82B366" stroke-width="1.6" stroke-dasharray="9 5"/>
+<text x="1002" y="84" font-size="14" font-weight="bold" fill="#000000">DPP-PROV  (Provenienz)</text>
+<rect x="560" y="440" width="560" height="620" rx="6" fill="#FFE6CC" stroke="#D79B00" stroke-width="1.6" stroke-dasharray="9 5"/>
+<text x="572" y="464" font-size="14" font-weight="bold" fill="#000000">DPP-INFO  (Informationsmuster)</text>
+<rect x="40" y="660" width="430" height="260" rx="6" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1.6" stroke-dasharray="9 5"/>
+<text x="52" y="684" font-size="14" font-weight="bold" fill="#000000">DPP-COMP  (Bedenkliche Stoffe)</text>
+<polyline points="300,137 430,137 430,127 630.0,127.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="640.0,127.0 630.2,132.0 630.2,122.0" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="300,192 430,192 430,127 630.0,127.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="640.0,127.0 630.2,132.0 630.2,122.0" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="300,247 430,247 430,127 630.0,127.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="640.0,127.0 630.2,132.0 630.2,122.0" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="300,302 430,302 430,127 630.0,127.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="640.0,127.0 630.2,132.0 630.2,122.0" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="300,367 470,367 470,267 630.0,267.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="640.0,267.0 630.2,272.0 630.2,262.0" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="300,422 470,422 470,267 630.0,267.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="640.0,267.0 630.2,272.0 630.2,262.0" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="300,477 470,477 470,267 630.0,267.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="640.0,267.0 630.2,272.0 630.2,262.0" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="300,532 470,532 470,267 630.0,267.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="640.0,267.0 630.2,272.0 630.2,262.0" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="800,677 840,677 840.0,534.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="840.0,524.0 845.0,533.8 835.0,533.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="800,732 840,732 840.0,534.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="840.0,524.0 845.0,533.8 835.0,533.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="800,787 840,787 840.0,534.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="840.0,524.0 845.0,533.8 835.0,533.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="800,842 840,842 840.0,534.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="840.0,524.0 845.0,533.8 835.0,533.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="870,677 840,677 840.0,534.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="840.0,524.0 845.0,533.8 835.0,533.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="870,732 840,732 840.0,534.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="840.0,524.0 845.0,533.8 835.0,533.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="870,787 840,787 840.0,534.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="840.0,524.0 845.0,533.8 835.0,533.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="245,700 245,610 185,610 185.0,559.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="185.0,549.0 190.0,558.8 180.0,558.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="155,830 155,800 215,800 215.0,744.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="215.0,734.0 220.0,743.8 210.0,743.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="352,830 352,800 285,800 285.0,744.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="285.0,734.0 290.0,743.8 280.0,743.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="1210,257 1250,257 1250.0,164.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="1250.0,154.0 1255.0,163.8 1245.0,163.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="1210,317 1250,317 1250.0,164.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="1250.0,154.0 1255.0,163.8 1245.0,163.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="1210,377 1250,377 1250.0,164.0" fill="none" stroke="#000000" stroke-width="1.2"/>
+<polygon points="1250.0,154.0 1255.0,163.8 1245.0,163.8" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<polyline points="700,144 700.0,242.0" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="700.0,250.0 695.9,242.0 704.1,242.0" fill="#000000" stroke="#000000" stroke-width="1"/>
+<text x="585" y="197" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-odp:describes</text>
+<text x="585" y="197" font-size="11" fill="#000000">dpp-odp:describes</text>
+<polyline points="820,262 870,262 870,300 790,300 790.0,292.0" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="790.0,284.0 794.1,292.0 785.9,292.0" fill="#000000" stroke="#000000" stroke-width="1"/>
+<text x="793" y="318" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-odp:hasPart</text>
+<text x="793" y="318" font-size="11" fill="#000000">dpp-odp:hasPart</text>
+<polyline points="838,144 838,180 905,180 905,470 835,470 835.0,482.0" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="835.0,490.0 830.9,482.0 839.1,482.0" fill="#000000" stroke="#000000" stroke-width="1"/>
+<text x="912" y="442" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-info:containsInformation</text>
+<text x="912" y="442" font-size="11" fill="#000000">dpp-info:containsInformation</text>
+<polyline points="760,490 760.0,292.0" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="760.0,284.0 764.1,292.0 755.9,292.0" fill="#000000" stroke="#000000" stroke-width="1"/>
+<text x="700" y="392" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-info:isAbout</text>
+<text x="700" y="392" font-size="11" fill="#000000">dpp-info:isAbout</text>
+<polyline points="940,498 990,498 990,466 880,466 880.0,482.0" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="880.0,490.0 875.9,482.0 884.1,482.0" fill="#000000" stroke="#000000" stroke-width="1"/>
+<text x="996" y="492" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-info:supersededBy</text>
+<text x="996" y="492" font-size="11" fill="#000000">dpp-info:supersededBy</text>
+<polyline points="940,510 1100,510 1100,897 1058.0,897.0" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="1050.0,897.0 1058.0,892.9 1058.0,901.1" fill="#000000" stroke="#000000" stroke-width="1"/>
+<text x="1000" y="878" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-info:unit</text>
+<text x="1000" y="878" font-size="11" fill="#000000">dpp-info:unit</text>
+<polyline points="940,522 1030,522 1030,170 1180,170 1180.0,162.0" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="1180.0,154.0 1184.1,162.0 1175.9,162.0" fill="#000000" stroke="#000000" stroke-width="1"/>
+<text x="1038" y="207" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-prov:responsibleActor</text>
+<text x="1038" y="207" font-size="11" fill="#000000">dpp-prov:responsibleActor</text>
+<polyline points="840,124 1152.0,124.0" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="1160.0,124.0 1152.0,128.1 1152.0,119.9" fill="#000000" stroke="#000000" stroke-width="1"/>
+<text x="950" y="114" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-prov:dppOwner</text>
+<text x="950" y="114" font-size="11" fill="#000000">dpp-prov:dppOwner</text>
+<polyline points="580,787 520,787 520,310 660,310 660.0,292.0" fill="none" stroke="#000000" stroke-width="1.2" stroke-dasharray="6 4"/>
+<polygon points="660.0,284.0 664.1,292.0 655.9,292.0" fill="#000000" stroke="#000000" stroke-width="1"/>
+<text x="392" y="544" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-comp:aboutPart /</text>
+<text x="392" y="544" font-size="11" fill="#000000">dpp-comp:aboutPart /</text>
+<text x="392" y="557" font-size="11" fill="none" stroke="#FFFFFF" stroke-width="3">dpp-comp:aboutWhole</text>
+<text x="392" y="557" font-size="11" fill="#000000">dpp-comp:aboutWhole</text>
+<rect x="640" y="110" width="200" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="740.0" y="131.0" font-size="12" text-anchor="middle" fill="#000000">dpp-odp:DPP</text>
+<rect x="640" y="250" width="180" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="730.0" y="271.0" font-size="12" text-anchor="middle" fill="#000000">dpp-odp:Product</text>
+<rect x="70" y="120" width="230" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="185.0" y="141.0" font-size="12" text-anchor="middle" fill="#000000">dpp-core:ComponentDPP</text>
+<rect x="70" y="175" width="230" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="185.0" y="196.0" font-size="12" text-anchor="middle" fill="#000000">dpp-core:MaterialDPP</text>
+<rect x="70" y="230" width="230" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="185.0" y="251.0" font-size="12" text-anchor="middle" fill="#000000">dpp-core:SubstanceDPP</text>
+<rect x="70" y="285" width="230" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="185.0" y="306.0" font-size="12" text-anchor="middle" fill="#000000">dpp-core:ConsumerProductDPP</text>
+<rect x="70" y="350" width="230" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="185.0" y="371.0" font-size="12" text-anchor="middle" fill="#000000">dpp-core:Component</text>
+<rect x="70" y="405" width="230" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="185.0" y="426.0" font-size="12" text-anchor="middle" fill="#000000">dpp-core:Material</text>
+<rect x="70" y="460" width="230" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="185.0" y="481.0" font-size="12" text-anchor="middle" fill="#000000">dpp-core:ConsumerProduct</text>
+<rect x="70" y="515" width="230" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="185.0" y="536.0" font-size="12" text-anchor="middle" fill="#000000">dpp-core:Substance</text>
+<rect x="740" y="490" width="200" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="840.0" y="511.0" font-size="12" text-anchor="middle" fill="#000000">dpp-info:DPPInformation</text>
+<rect x="580" y="660" width="220" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="690.0" y="681.0" font-size="12" text-anchor="middle" fill="#000000">dpp-info:ProductCharacteristic</text>
+<rect x="580" y="715" width="220" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="690.0" y="736.0" font-size="12" text-anchor="middle" fill="#000000">dpp-info:ProductQuality</text>
+<rect x="580" y="770" width="220" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="690.0" y="791.0" font-size="12" text-anchor="middle" fill="#000000">dpp-info:CompositionInformation</text>
+<rect x="580" y="825" width="220" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="690.0" y="846.0" font-size="12" text-anchor="middle" fill="#000000">dpp-info:CertificateInformation</text>
+<rect x="870" y="660" width="210" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="975.0" y="681.0" font-size="12" text-anchor="middle" fill="#000000">dpp-info:DisassemblyInformation</text>
+<rect x="870" y="715" width="210" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="975.0" y="736.0" font-size="12" text-anchor="middle" fill="#000000">dpp-info:RepairInstruction</text>
+<rect x="870" y="770" width="210" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="975.0" y="791.0" font-size="12" text-anchor="middle" fill="#000000">dpp-info:LegalGuarantee</text>
+<rect x="890" y="880" width="160" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="970.0" y="901.0" font-size="12" text-anchor="middle" fill="#000000">dpp-info:Unit</text>
+<rect x="130" y="700" width="230" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="245.0" y="721.0" font-size="12" text-anchor="middle" fill="#000000">dpp-comp:SubstanceOfConcern</text>
+<rect x="55" y="830" width="175" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="142.5" y="851.0" font-size="12" text-anchor="middle" fill="#000000">dpp-comp:ToxicSubstance</text>
+<rect x="240" y="830" width="224" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="352.0" y="851.0" font-size="12" text-anchor="middle" fill="#000000">dpp-comp:SubstanceHinderingRecycling</text>
+<rect x="1160" y="120" width="180" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="1250.0" y="141.0" font-size="12" text-anchor="middle" fill="#000000">dpp-prov:Actor</text>
+<rect x="1010" y="240" width="200" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="1110.0" y="261.0" font-size="12" text-anchor="middle" fill="#000000">dpp-prov:ValueChainActor</text>
+<rect x="1010" y="300" width="200" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="1110.0" y="321.0" font-size="12" text-anchor="middle" fill="#000000">dpp-prov:Consumer</text>
+<rect x="1010" y="360" width="200" height="34" fill="#FFFFFF" stroke="#000000" stroke-width="1.2"/>
+<text x="1110.0" y="381.0" font-size="12" text-anchor="middle" fill="#000000">dpp-prov:Authority</text>
+<rect x="565" y="550" width="265" height="58" fill="#FFFFFF" stroke="#000000" stroke-width="1" stroke-dasharray="5 3"/>
+<text x="571" y="565" font-size="10.5" fill="#000000">(all)  dpp-info:value  </text>
+<text x="571" y="578" font-size="10.5" fill="#000000">  dpp-info:startTime,</text>
+<text x="571" y="591" font-size="10.5" fill="#000000">dpp-info:endTime : xsd:dateTime</text>
+<polyline points="700,550 740,515" fill="none" stroke="#666666" stroke-width="1" stroke-dasharray="6 4"/>
+<path d="M 40 960 L 425 960 L 440 975 L 440 1056 L 40 1056 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<path d="M 425 960 L 425 975 L 440 975" fill="#F0F0F0" stroke="#000000" stroke-width="1"/>
+<text x="48" y="978" font-size="11" fill="#000000">@base: http://w3id.org/dppo/ontology/</text>
+<text x="48" y="993" font-size="11" fill="#000000">dpp-odp: .../dpp-odp/     dpp-core: .../dpp-core/</text>
+<text x="48" y="1008" font-size="11" fill="#000000">dpp-info: .../dpp-info/     dpp-comp: .../dpp-comp/</text>
+<text x="48" y="1023" font-size="11" fill="#000000">dpp-prov: .../dpp-prov/</text>
+<text x="48" y="1038" font-size="11" fill="#000000">owl, rdfs, xsd, dcterms, vann: Standardpraefixe</text>
+<path d="M 1140 560 L 1465 560 L 1480 575 L 1480 656 L 1140 656 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<path d="M 1465 560 L 1465 575 L 1480 575" fill="#F0F0F0" stroke="#000000" stroke-width="1"/>
+<text x="1148" y="578" font-size="11" fill="#000000">dcterms:title: 'Core Digital Product Passport</text>
+<text x="1148" y="593" font-size="11" fill="#000000">Ontology' (DPPO), owl:versionInfo: 0.1</text>
+<text x="1148" y="608" font-size="11" fill="#000000">dcterms:creator: M. Jansen (Fraunhofer IN),</text>
+<text x="1148" y="623" font-size="11" fill="#000000">Blomqvist, Li, Keskisaerkkae (LiU)</text>
+<text x="1148" y="638" font-size="11" fill="#000000">dcterms:license: CC BY 4.0</text>
+<path d="M 1140 690 L 1465 690 L 1480 705 L 1480 786 L 1140 786 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<path d="M 1465 690 L 1465 705 L 1480 705" fill="#F0F0F0" stroke="#000000" stroke-width="1"/>
+<text x="1148" y="708" font-size="11" fill="#000000">Definierte Klassen (owl:equivalentClass):</text>
+<text x="1148" y="723" font-size="11" fill="#000000">ComponentDPP = DPP and</text>
+<text x="1148" y="738" font-size="11" fill="#000000">(dpp-odp:describes some Component)</text>
+<text x="1148" y="753" font-size="11" fill="#000000">analog: MaterialDPP, SubstanceDPP,</text>
+<text x="1148" y="768" font-size="11" fill="#000000">ConsumerProductDPP</text>
+<path d="M 1140 820 L 1465 820 L 1480 835 L 1480 916 L 1140 916 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<path d="M 1465 820 L 1465 835 L 1480 835" fill="#F0F0F0" stroke="#000000" stroke-width="1"/>
+<text x="1148" y="838" font-size="11" fill="#000000">Dokument-Verweise, sub-properties von</text>
+<text x="1148" y="853" font-size="11" fill="#000000">dpp-info:externalDocument:</text>
+<text x="1148" y="868" font-size="11" fill="#000000">certificateDocument,</text>
+<text x="1148" y="883" font-size="11" fill="#000000">disassemblyInstructionsDocument,</text>
+<text x="1148" y="898" font-size="11" fill="#000000">repairInstructionsDocument</text>
+<path d="M 1140 950 L 1465 950 L 1480 965 L 1480 1030 L 1140 1030 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+<path d="M 1465 950 L 1465 965 L 1480 965" fill="#F0F0F0" stroke="#000000" stroke-width="1"/>
+<text x="1148" y="968" font-size="11" fill="#000000">dpp-prov:timeStamp (xsd:dateTime) mit</text>
+<text x="1148" y="983" font-size="11" fill="#000000">Unterproperties creationTimeStamp,</text>
+<text x="1148" y="998" font-size="11" fill="#000000">invalidAtTimeStamp (Gueltigkeit von</text>
+<text x="1148" y="1013" font-size="11" fill="#000000">DPP-Informationen)</text>
+</svg>

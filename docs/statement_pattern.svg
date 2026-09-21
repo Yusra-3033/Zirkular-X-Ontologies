@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="32 126 896 323" width="896" height="323" font-family="Arial, Helvetica, sans-serif">
+<rect x="32" y="126" width="896" height="323" fill="#FFFFFF"/>
+<rect x="48.0" y="142.0" width="210.0" height="68.0" fill="#F8CECC" stroke="#003560" stroke-width="1.00"/>
+<rect x="690.0" y="142.0" width="222.0" height="68.0" fill="#FFF2CC" stroke="#003560" stroke-width="1.00"/>
+<rect x="355.0" y="266.0" width="255.0" height="70.0" fill="#FFE6CC" stroke="#003560" stroke-width="1.00"/>
+<rect x="48.0" y="373.0" width="230.0" height="60.0" fill="#FFFFFF" stroke="#003560" stroke-width="1.00"/>
+<rect x="704.0" y="373.0" width="208.0" height="60.0" fill="#FFFFFF" stroke="#003560" stroke-width="1.00"/>
+<polyline points="153.0,210.0 153.0,238.0 482.5,238.0 482.5,266.0" fill="none" stroke="#003560" stroke-width="1.40"/>
+<polygon points="482.5,266.0 478.7,257.8 486.3,257.8" fill="#003560" stroke="#003560" stroke-width="1"/>
+<polyline points="610.0,301.0 801.0,301.0 801.0,210.0" fill="none" stroke="#003560" stroke-width="1.40"/>
+<polygon points="801.0,210.0 804.8,218.2 797.2,218.2" fill="#003560" stroke="#003560" stroke-width="1"/>
+<polyline points="355.0,301.0 163.0,301.0 163.0,373.0" fill="none" stroke="#003560" stroke-width="1.40"/>
+<polygon points="163.0,373.0 159.2,364.8 166.8,364.8" fill="#003560" stroke="#003560" stroke-width="1"/>
+<polyline points="610.0,301.0 808.0,301.0 808.0,373.0" fill="none" stroke="#003560" stroke-width="1.40"/>
+<polygon points="808.0,373.0 804.2,364.8 811.8,364.8" fill="#003560" stroke="#003560" stroke-width="1"/>
+<text x="153.0" y="171.1" font-size="18.0" text-anchor="middle"><tspan fill="#003560">ex:dpp-rlt-01</tspan></text>
+<text x="153.0" y="193.6" font-size="18.0" text-anchor="middle"><tspan fill="#003560">odp:DPP</tspan></text>
+<text x="801.0" y="171.1" font-size="18.0" text-anchor="middle"><tspan fill="#003560">ex:rlt-01</tspan></text>
+<text x="801.0" y="193.6" font-size="18.0" text-anchor="middle"><tspan fill="#003560">zx:VentilationUnit</tspan></text>
+<text x="482.5" y="296.1" font-size="18.0" text-anchor="middle"><tspan fill="#003560">ex:st-airflow</tspan></text>
+<text x="482.5" y="318.6" font-size="18.0" text-anchor="middle"><tspan fill="#003560">zx:ParameterStatement</tspan></text>
+<text x="163.0" y="398.1" font-size="18.0" text-anchor="middle"><tspan fill="#003560">zxd:AirflowRate</tspan></text>
+<text x="163.0" y="420.6" font-size="18.0" text-anchor="middle"><tspan fill="#003560">Property reference</tspan></text>
+<text x="808.0" y="398.1" font-size="18.0" text-anchor="middle"><tspan fill="#003560">Unit missing</tspan></text>
+<text x="808.0" y="420.6" font-size="18.0" text-anchor="middle"><tspan fill="#003560">add m³/h</tspan></text>
+<text x="241.0" y="228.7" font-size="13.0" text-anchor="middle" fill="none" stroke="#FFFFFF" stroke-width="3">info:containsInformation</text>
+<text x="241.0" y="228.7" font-size="13.0" text-anchor="middle"><tspan fill="#003560">info:containsInformation</tspan></text>
+<text x="690.5" y="252.7" font-size="13.0" text-anchor="middle" fill="none" stroke="#FFFFFF" stroke-width="3">info:isAbout</text>
+<text x="690.5" y="252.7" font-size="13.0" text-anchor="middle"><tspan fill="#003560">info:isAbout</tspan></text>
+<text x="245.5" y="354.7" font-size="13.0" text-anchor="middle" fill="none" stroke="#FFFFFF" stroke-width="3">info:characteristic</text>
+<text x="245.5" y="354.7" font-size="13.0" text-anchor="middle"><tspan fill="#003560">info:characteristic</tspan></text>
+<text x="689.0" y="354.7" font-size="13.0" text-anchor="middle" fill="none" stroke="#FFFFFF" stroke-width="3">info:unit (open)</text>
+<text x="689.0" y="354.7" font-size="13.0" text-anchor="middle"><tspan fill="#003560">info:unit (open)</tspan></text>
+<text x="351.0" y="390.7" font-size="23.0" text-anchor="start" fill="none" stroke="#FFFFFF" stroke-width="3">info:value = 5000.0</text>
+<text x="351.0" y="390.7" font-size="23.0" text-anchor="start"><tspan font-weight="bold" fill="#003560">info:value = 5000.0</tspan></text>
+<text x="351.0" y="420.3" font-size="17.0" text-anchor="start" fill="none" stroke="#FFFFFF" stroke-width="3">Numeric, xsd:decimal</text>
+<text x="351.0" y="420.3" font-size="17.0" text-anchor="start"><tspan fill="#003560">Numeric, xsd:decimal</tspan></text>
+<text x="313.0" y="177.0" font-size="20.0" text-anchor="start" fill="none" stroke="#FFFFFF" stroke-width="3">As-is state from demo.ttl</text>
+<text x="313.0" y="177.0" font-size="20.0" text-anchor="start"><tspan font-weight="bold" fill="#003560">As-is state from demo.ttl</tspan></text>
+</svg>
