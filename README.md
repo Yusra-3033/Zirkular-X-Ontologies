@@ -7,7 +7,7 @@ unit, and reproducible SPARQL competency-question queries.
 
 > DPPO is developed by Jansen et al. See: (https://github.com/LiUSemWeb/DPPO).
 
-![DPPO 0.1 module structure] ()
+![DPPO 0.1 module structure](docs/DPPO_Ontologie.png)
 ---
 
 ## 1. Why a Digital Product Passport, and why an ontology?
