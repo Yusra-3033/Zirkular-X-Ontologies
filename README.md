@@ -153,7 +153,7 @@ All identifiers, company names and URLs in the demo are fictitious.
 
 ## 5. Competency-question queries
 
-Three CQs, chosen so that together they touch every reused module — see
+Three CQs, chosen so that together they touch every reused module. See
 [`queries/README.md`](queries/README.md) for the queries with their actual
 results:
 
