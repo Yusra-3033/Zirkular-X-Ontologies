@@ -57,8 +57,8 @@ follows a strict three-layer architecture (see
 [docs/zx_extension_architecture.svg](docs/zx_extension_architecture.svg)):
 
 ```
-DPPO 0.1 (5 reused modules)     <--- zx-dppo-conn.ttl --->   zx-core.ttl
-        unchanged                  alignment only           domain model
+DPPO 0.1 (5 reused modules)      <------ zx-dppo-conn.ttl ------>   zx-core.ttl
+        unchanged                        alignment only            domain model
 ```
 
 **[`ontology/zx-core.ttl`](ontology/zx-core.ttl)** — the domain model, usable on
