@@ -1,0 +1,60 @@
+# baseURI: https://w3id.org/zirkular-x/dppo-conn
+# prefix: dppo-conn
+
+@prefix dpp-comp: <http://w3id.org/dppo/ontology/dpp-comp/> .
+@prefix dpp-core: <http://w3id.org/dppo/ontology/dpp-core/> .
+@prefix dpp-info: <http://w3id.org/dppo/ontology/dpp-info/> .
+@prefix dpp-odp: <http://w3id.org/dppo/ontology/dpp-odp/> .
+@prefix dpp-prov: <http://w3id.org/dppo/ontology/dpp-prov/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix zx: <https://w3id.org/zirkular-x/ext#> .
+
+<https://w3id.org/zirkular-x/dppo-conn>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "1.0.0" ;
+  rdfs:label "ZIRKULAR-X to DPPO Connector"@en , "ZIRKULAR-X-DPPO-Verbindungsmodul"@de ;
+  rdfs:comment "The only file that crosses the namespace boundary. Every axiom mentioning a DPPO IRI lives here; zx-core and DPPO stay untouched."@en ;
+  owl:imports <https://w3id.org/zirkular-x/ext> ;
+  owl:imports <http://w3id.org/dppo/ontology/dpp-odp/> ;
+  owl:imports <http://w3id.org/dppo/ontology/dpp-core/> ;
+  owl:imports <http://w3id.org/dppo/ontology/dpp-info/> ;
+  owl:imports <http://w3id.org/dppo/ontology/dpp-prov/> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> .
+
+# ---------- The axiom that carries the architecture ----------
+# Every zx statement becomes a DPPInformation, so DPPO's published
+# SHACL obligation (responsibleActor exactly 1, creationTimeStamp
+# exactly 1) fires on every zx fact.
+
+zx:Statement rdfs:subClassOf dpp-info:DPPInformation .
+
+# ---------- Statement subtype binding ----------
+
+zx:ParameterStatement rdfs:subClassOf dpp-info:ProductCharacteristic .
+
+# ---------- Domain classes under the DPPO product tree ----------
+# Makes every TGA product a dpp-odp:Product transitively, which the
+# DPPO shapes require as the target of dpp-info:isAbout.
+
+zx:BuildingProduct rdfs:subClassOf dpp-core:Component .
+
+# ---------- EN 18223 Table 1 attributes onto the passport node ----------
+
+zx:uniqueProductIdentifier rdfs:domain dpp-odp:DPP .
+zx:dppStatus rdfs:domain dpp-odp:DPP .
+zx:granularity rdfs:comment "Domain left open on purpose: used on dpp-odp:DPP and on zx:Identifier (EN 18219 types both)."@en .
+
+# ---------- Identifier attachment ----------
+
+zx:hasIdentifier rdfs:domain dpp-odp:Product .
+
+# ---------- Addition 2026-09-18 ----------
+# Material statements are DPPO composition information. dpp-comp itself
+# stays un-imported (defect D1 crashes the TopBraid resolver); its
+# aboutWhole/aboutPart IRIs are used directly in the data, which needs
+# no import.
+
+zx:MaterialStatement rdfs:subClassOf dpp-info:CompositionInformation .
