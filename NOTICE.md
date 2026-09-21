@@ -2,7 +2,7 @@
 
 This repository reuses the **Digital Product Passport Ontology (DPPO) 0.1**.
 
-- Authors: M. Jansen (Fraunhofer IN), E. Blomqvist, H. Li, R. Keskisärkkä (Linköping University)
+- Authors: M. Jansen, E. Blomqvist, H. Li, R. Keskisärkkä 
 - Homepage: https://liusemweb.github.io/DPPO/
 - Source:   https://github.com/LiUSemWeb/DPPO
 - License:  CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
