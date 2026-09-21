@@ -61,7 +61,7 @@ DPPO 0.1 (5 reused modules)      <------ zx-dppo-conn.ttl ------>   zx-core.ttl
         unchanged                        alignment only            domain model
 ```
 
-**[`ontology/zx-core.ttl`](ontology/zx-core.ttl)** — the domain model, usable on
+**[`ontology/zx-core.ttl`](ontology/zx-core.ttl)** : the domain model, usable on
 its own:
 
 - Product classes: `zx:BuildingProduct`, `zx:VentilationUnit`, `zx:Fan`.
@@ -76,7 +76,7 @@ its own:
   plus `zx:elementId` as a stable key that links statements to CQ IDs and
   parameter-list rows.
 
-**[`ontology/zx-dppo-conn.ttl`](ontology/zx-dppo-conn.ttl)** — the connector.
+**[`ontology/zx-dppo-conn.ttl`](ontology/zx-dppo-conn.ttl)** : the connector.
 All alignment axioms live here and nowhere else:
 
 | ZIRKULAR-X term | aligned to DPPO |
@@ -157,11 +157,11 @@ Three CQs, chosen so that together they touch every reused module — see
 [`queries/README.md`](queries/README.md) for the queries with their actual
 results:
 
-- **CQ-A — material composition** (`dpp-comp` + `dpp-info`): materials and
+- **CQ-A: material composition** (`dpp-comp` + `dpp-info`): materials and
   shares of RLT-01, ordered by share.
-- **CQ-B — life-cycle events including components** (`dpp-odp:hasPart+`):
+- **CQ-B: life-cycle events including components** (`dpp-odp:hasPart+`):
   finds the fan's disassembly through the decomposition path.
-- **CQ-C — traceable characteristics** (`dpp-info` + `dpp-prov`): value,
+- **CQ-C: traceable characteristics** (`dpp-info` + `dpp-prov`): value,
   optional unit, responsible actor and timestamp per parameter; exposes the
   missing airflow unit.
 
