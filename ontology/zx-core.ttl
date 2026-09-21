@@ -1,0 +1,195 @@
+# baseURI: https://w3id.org/zirkular-x/ext
+# prefix: zx
+
+@prefix : <https://w3id.org/zirkular-x/ext#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix zx: <https://w3id.org/zirkular-x/ext#> .
+
+<https://w3id.org/zirkular-x/ext>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "1.0.0" ;
+  rdfs:label "ZIRKULAR-X TGA Extension Core"@en , "ZIRKULAR-X TGA-Erweiterungskern"@de ;
+  rdfs:comment "Standard-agnostic extension terms. Contains no DPPO IRI by design; all cross-namespace axioms live in zx-dppo-conn."@en ;
+  dcterms:creator "Chair of Computing in Engineering, Ruhr-Universitaet Bochum" ;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/> 
+.
+
+# ---------- TGA domain classes ----------
+
+zx:BuildingProduct
+  rdf:type owl:Class ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> ;
+  rdfs:label "Bauprodukt"@de , "Building product"@en ;
+  skos:definition "Product installed in a building; root class of the ZIRKULAR-X TGA domain (AP1 scope: KG 410 and KG 430)."@en ;
+  rdfs:subClassOf owl:Thing ;
+.
+
+zx:VentilationUnit
+  rdf:type owl:Class ;
+  rdfs:label "Ventilation unit"@en , "RLT-Geraet"@de ;
+  skos:definition "Air handling unit, KG 430 pilot component of ZIRKULAR-X."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> ;
+  rdfs:subClassOf zx:BuildingProduct .
+
+zx:Fan
+  rdf:type owl:Class ;
+  rdfs:label "Fan"@en , "Ventilator"@de ;
+  skos:definition "Fan as an installable building product; part-of relations to a unit are instance-level via dpp-odp:hasPart, not subclassing."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> ;
+  rdfs:subClassOf zx:BuildingProduct .
+
+# ---------- Statement layer ----------
+
+zx:Statement
+  rdf:type owl:Class ;
+  rdfs:label "Statement"@en , "Aussage"@de ;
+  skos:definition "One reified fact about a product; carries value, unit, provenance and evidence. Bound to dpp-info:DPPInformation in zx-dppo-conn."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+zx:ParameterStatement
+  rdf:type owl:Class ;
+  rdfs:label "Parameter statement"@en , "Parameteraussage"@de ;
+  skos:definition "Statement asserting one technical characteristic of a product."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> ;
+  rdfs:subClassOf zx:Statement .
+
+zx:elementId
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "elementId"@en ;
+  rdfs:range xsd:string ;
+  skos:definition "Addressing key per data element (EN 18223:2026, 5.2.2; EN 18222:2026)."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+# ---------- Granularity (EN 18219:2026, 4.4.2) ----------
+
+zx:granularityScheme
+  rdf:type skos:ConceptScheme ;
+  rdfs:label "Granularity levels (EN 18219:2026, 4.4.2)"@en .
+
+zx:model
+  rdf:type skos:Concept ;
+  skos:inScheme zx:granularityScheme ;
+  skos:prefLabel "model"@en ;
+  skos:notation "model" .
+
+zx:batch
+  rdf:type skos:Concept ;
+  skos:inScheme zx:granularityScheme ;
+  skos:prefLabel "batch"@en ;
+  skos:notation "batch" .
+
+zx:item
+  rdf:type skos:Concept ;
+  skos:inScheme zx:granularityScheme ;
+  skos:prefLabel "item"@en ;
+  skos:notation "item" .
+
+zx:granularity
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "granularity"@en ;
+  rdfs:range skos:Concept ;
+  skos:definition "Granularity of a passport or identifier: model, batch or item; immutable after placing on the market (EN 18219:2026, 4.4.2)."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+# ---------- Identifier nucleus (EN 18219:2026) ----------
+
+zx:Identifier
+  rdf:type owl:Class ;
+  rdfs:label "Identifier"@en , "Kennung"@de ;
+  skos:definition "Scheme-typed identifier per EN 18219:2026; full attribute set per Parameterliste rows E1..E20."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+zx:identifierValue
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "identifierValue"@en ;
+  rdfs:domain zx:Identifier ;
+  rdfs:range xsd:string ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+zx:hasIdentifier
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "hasIdentifier"@en ;
+  rdfs:range zx:Identifier ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+zx:supersedesIdentifier
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "supersedesIdentifier"@en ;
+  rdfs:domain zx:Identifier ;
+  rdfs:range zx:Identifier ;
+  skos:definition "Links a new identifier to the one it replaces (EN 18219:2026, 4.4.2(3))."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+# ---------- EN 18223:2026 Table 1, working pair ----------
+
+zx:uniqueProductIdentifier
+  rdf:type owl:DatatypeProperty ;
+  rdfs:label "uniqueProductIdentifier"@en ;
+  rdfs:range xsd:anyURI ;
+  skos:definition "Unique product identifier per EN 18219:2026 schemes 1..5 (EN 18223:2026, Table 1). Domain dpp-odp:DPP is bound in zx-dppo-conn."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+zx:dppStatus
+  rdf:type owl:ObjectProperty ;
+  rdfs:label "dppStatus"@en ;
+  rdfs:range skos:Concept ;
+  skos:definition "Status of the passport (EN 18223:2026, Table 1)."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+zx:dppStatusScheme
+  rdf:type skos:ConceptScheme ;
+  rdfs:label "DPP status values (EN 18223:2026, Table 1)"@en .
+
+zx:active
+  rdf:type skos:Concept ;
+  skos:inScheme zx:dppStatusScheme ;
+  skos:prefLabel "active"@en ;
+  skos:notation "active" .
+
+# ---------- Additions 2026-09-18: statement subtypes for rows 1..32 ----------
+
+zx:MaterialStatement
+  rdf:type owl:Class ;
+  rdfs:label "Material statement"@en , "Materialaussage"@de ;
+  skos:definition "Composition fact: share of one material in a product (Parameterliste row 25). Bound to dpp-info:CompositionInformation in zx-dppo-conn."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> ;
+  rdfs:subClassOf zx:Statement .
+
+zx:ClassificationStatement
+  rdf:type owl:Class ;
+  rdfs:label "Classification statement"@en , "Klassifikationsaussage"@de ;
+  skos:definition "Attributable classification of a product (DIN 276, BauPVO Annex VII; rows 2..3)."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> ;
+  rdfs:subClassOf zx:Statement .
+
+zx:LifeCycleEventStatement
+  rdf:type owl:Class ;
+  rdfs:label "Life-cycle event statement"@en , "Lebenszyklusereignis-Aussage"@de ;
+  skos:definition "Record of one life-cycle event (production, maintenance, refurbishment, disassembly; rows 5, 14, 15). Event date and place are content; the creation timestamp says when the record was made."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> ;
+  rdfs:subClassOf zx:Statement .
+
+zx:eventType a owl:ObjectProperty ; rdfs:label "eventType"@en ; rdfs:range skos:Concept ; rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+zx:eventDate a owl:DatatypeProperty ; rdfs:label "eventDate"@en ; rdfs:range xsd:date ; rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+zx:eventLocation a owl:DatatypeProperty ; rdfs:label "eventLocation"@en ; rdfs:range xsd:string ; rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+zx:lifeCycleEventTypes a skos:ConceptScheme ; rdfs:label "Life-cycle event types"@en .
+zx:production a skos:Concept ; skos:inScheme zx:lifeCycleEventTypes ; skos:prefLabel "production"@en , "Produktion"@de ; skos:notation "production" .
+zx:maintenanceEvent a skos:Concept ; skos:inScheme zx:lifeCycleEventTypes ; skos:prefLabel "maintenance"@en , "Wartung"@de ; skos:notation "maintenance" .
+zx:refurbishment a skos:Concept ; skos:inScheme zx:lifeCycleEventTypes ; skos:prefLabel "refurbishment"@en , "Aufarbeitung"@de ; skos:notation "refurbishment" .
+zx:disassembly a skos:Concept ; skos:inScheme zx:lifeCycleEventTypes ; skos:prefLabel "disassembly"@en , "Demontage"@de ; skos:notation "disassembly" .
+
+zx:legacyIdentifierValue a owl:DatatypeProperty ;
+  rdfs:label "legacyIdentifierValue"@en ; rdfs:domain zx:Identifier ; rdfs:range xsd:string ;
+  skos:definition "Pre-existing identifier from the building stock, kept on the EN 18219 identifier (row 1, E7)."@en ;
+  rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+
+zx:din276Scheme a skos:ConceptScheme ; rdfs:label "DIN 276 cost groups (KG 400 excerpt)"@en .
+zx:kg430 a skos:Concept ; skos:inScheme zx:din276Scheme ; skos:prefLabel "KG 430 Raumlufttechnische Anlagen"@de ; skos:notation "430" .
+zx:din276CostGroup a owl:ObjectProperty ; rdfs:label "din276CostGroup"@en ; rdfs:range skos:Concept ; rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
+zx:cprAnnexVIIClass a owl:DatatypeProperty ; rdfs:label "cprAnnexVIIClass"@en ; rdfs:range xsd:string ; rdfs:isDefinedBy <https://w3id.org/zirkular-x/ext> .
