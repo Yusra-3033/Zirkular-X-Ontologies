@@ -54,7 +54,7 @@ The five module files are vendored unmodified in [`dppo/`](dppo/).
 
 DPPO deliberately contains no building or HVAC domain knowledge. The extension
 follows a strict three-layer architecture (see
-[docs/zx_extension_architecture.svg](docs/)):
+[docs/zx_extension_architecture.svg](docs/zx_extension_architecture.svg)):
 
 ```
 DPPO 0.1 (5 reused modules)   <--- zx-dppo-conn.ttl --->   zx-core.ttl
