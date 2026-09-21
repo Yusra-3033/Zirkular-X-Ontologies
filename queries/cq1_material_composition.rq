@@ -1,0 +1,19 @@
+# CQ-A  "What materials is the product composed of, and in what shares?"
+# Modules exercised: dpp-comp (aboutWhole/aboutPart), dpp-info (value/unit),
+#                    zx (MaterialStatement), rdfs labels.
+PREFIX dpp-info: <http://w3id.org/dppo/ontology/dpp-info/>
+PREFIX dpp-comp: <http://w3id.org/dppo/ontology/dpp-comp/>
+PREFIX zx:       <https://w3id.org/zirkular-x/ext#>
+PREFIX ex:       <https://w3id.org/zirkular-x/example/demo#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?material ?share ?unit
+WHERE {
+  ?st a zx:MaterialStatement ;
+      dpp-comp:aboutWhole ex:rlt-01 ;
+      dpp-comp:aboutPart  ?mat ;
+      dpp-info:value      ?share ;
+      dpp-info:unit       ?unit .
+  ?mat rdfs:label ?material .
+}
+ORDER BY DESC(?share)

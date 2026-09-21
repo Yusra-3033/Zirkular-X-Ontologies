@@ -1,0 +1,25 @@
+# CQ-C  "For a given characteristic of the product: what is the value,
+#        its unit, who recorded it, and when?"
+# Modules exercised: dpp-info (containsInformation, characteristic,
+#                    value, unit), dpp-prov (responsibleActor,
+#                    creationTimeStamp), zx (elementId).
+# NOTE: the unit is OPTIONAL on purpose. In the demo the airflow
+# statement has no unit yet (documented data gap); a mandatory join
+# would silently drop the row instead of exposing the gap.
+PREFIX dpp-info: <http://w3id.org/dppo/ontology/dpp-info/>
+PREFIX dpp-prov: <http://w3id.org/dppo/ontology/dpp-prov/>
+PREFIX zx:       <https://w3id.org/zirkular-x/ext#>
+PREFIX ex:       <https://w3id.org/zirkular-x/example/demo#>
+
+SELECT ?elementId ?characteristic ?value ?unit ?actor ?recordedAt
+WHERE {
+  ex:dpp-rlt-01 dpp-info:containsInformation ?st .
+  ?st a zx:ParameterStatement ;
+      dpp-info:characteristic ?characteristic ;
+      dpp-info:value ?value ;
+      zx:elementId ?elementId ;
+      dpp-prov:responsibleActor ?actor ;
+      dpp-prov:creationTimeStamp ?recordedAt .
+  OPTIONAL { ?st dpp-info:unit ?unit }
+}
+ORDER BY ?elementId

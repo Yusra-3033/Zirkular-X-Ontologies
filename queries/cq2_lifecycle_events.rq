@@ -1,0 +1,22 @@
+# CQ-B  "Which life-cycle events are documented for the product,
+#        including its components?"
+# Modules exercised: dpp-odp (hasPart, product decomposition),
+#                    zx (LifeCycleEventStatement, eventType/eventDate),
+#                    dpp-info (isAbout).
+PREFIX dpp-odp:  <http://w3id.org/dppo/ontology/dpp-odp/>
+PREFIX dpp-info: <http://w3id.org/dppo/ontology/dpp-info/>
+PREFIX zx:       <https://w3id.org/zirkular-x/ext#>
+PREFIX ex:       <https://w3id.org/zirkular-x/example/demo#>
+
+SELECT DISTINCT ?subject ?eventType ?date
+WHERE {
+  VALUES ?root { ex:rlt-01 }
+  { BIND(?root AS ?subject) }
+  UNION
+  { ?root dpp-odp:hasPart+ ?subject }
+  ?ev a zx:LifeCycleEventStatement ;
+      dpp-info:isAbout ?subject ;
+      zx:eventType     ?eventType ;
+      zx:eventDate     ?date .
+}
+ORDER BY ?date
